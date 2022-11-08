@@ -15,7 +15,7 @@ Widget dashboard(BuildContext context) {
           style: Theme.of(context)
               .textTheme
               .titleLarge
-              ?.copyWith(fontWeight: FontWeight.w600, color: darkGey),
+              ?.copyWith(fontWeight: FontWeight.w600, color: darkGrey),
         ),
         const SizedBox(
           height: defaultPadding / 2,
@@ -28,21 +28,22 @@ Widget dashboard(BuildContext context) {
               children: const [
                 Text(
                   "Merhaba",
-                  style: TextStyle(color: darkGey),
+                  style: TextStyle(color: darkGrey),
                 ),
                 Text(
                   "EMRE ÇİVİTCİ",
-                  style: TextStyle(color: darkGey, fontWeight: FontWeight.w600),
+                  style:
+                      TextStyle(color: darkGrey, fontWeight: FontWeight.w600),
                 ),
                 Text(
                   "Satış Temsilcisi",
-                  style: TextStyle(color: darkGey),
+                  style: TextStyle(color: darkGrey),
                 ),
               ],
             ),
             const Text(
               "ACENTA İSMİ",
-              style: TextStyle(color: darkGey, fontWeight: FontWeight.w600),
+              style: TextStyle(color: darkGrey, fontWeight: FontWeight.w600),
             ),
           ],
         ),
@@ -52,7 +53,7 @@ Widget dashboard(BuildContext context) {
         Container(
           padding: const EdgeInsets.all(defaultPadding / 2),
           decoration:
-              BoxDecoration(border: Border.all(color: darkGey, width: 1)),
+              BoxDecoration(border: Border.all(color: darkGrey, width: 1)),
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
@@ -61,7 +62,7 @@ Widget dashboard(BuildContext context) {
                 child: Container(
                   decoration: const BoxDecoration(
                     border: Border(
-                      right: BorderSide(color: darkGey, width: 1),
+                      right: BorderSide(color: darkGrey, width: 1),
                     ),
                   ),
                   child: Column(
@@ -70,7 +71,7 @@ Widget dashboard(BuildContext context) {
                         const Text(
                           "Konaklama \nSayısı",
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: darkGey),
+                          style: TextStyle(color: darkGrey),
                         ),
                         const SizedBox(
                           height: defaultPadding / 2,
@@ -81,7 +82,7 @@ Widget dashboard(BuildContext context) {
                               .textTheme
                               .titleLarge
                               ?.copyWith(
-                                  fontWeight: FontWeight.w600, color: darkGey),
+                                  fontWeight: FontWeight.w600, color: darkGrey),
                         ),
                       ]),
                 ),
@@ -91,7 +92,7 @@ Widget dashboard(BuildContext context) {
                 child: Container(
                   decoration: const BoxDecoration(
                     border: Border(
-                      right: BorderSide(color: darkGey, width: 1),
+                      right: BorderSide(color: darkGrey, width: 1),
                     ),
                   ),
                   child: Column(
@@ -100,7 +101,7 @@ Widget dashboard(BuildContext context) {
                         const Text(
                           "Toplam \nGeceleme",
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: darkGey),
+                          style: TextStyle(color: darkGrey),
                         ),
                         const SizedBox(
                           height: defaultPadding / 2,
@@ -111,7 +112,7 @@ Widget dashboard(BuildContext context) {
                               .textTheme
                               .titleLarge
                               ?.copyWith(
-                                  fontWeight: FontWeight.w600, color: darkGey),
+                                  fontWeight: FontWeight.w600, color: darkGrey),
                         ),
                       ]),
                 ),
@@ -125,7 +126,7 @@ Widget dashboard(BuildContext context) {
                         const Text(
                           "Bonus",
                           textAlign: TextAlign.center,
-                          style: TextStyle(color: darkGey),
+                          style: TextStyle(color: darkGrey),
                         ),
                         const Text(""),
                         const SizedBox(
@@ -137,7 +138,7 @@ Widget dashboard(BuildContext context) {
                               .textTheme
                               .titleLarge
                               ?.copyWith(
-                                  fontWeight: FontWeight.w600, color: darkGey),
+                                  fontWeight: FontWeight.w600, color: darkGrey),
                         ),
                       ]),
                 ),
@@ -150,7 +151,7 @@ Widget dashboard(BuildContext context) {
         ),
         const Text(
           "Rezervasyonlarınızı Voucher Tarihinden itibaren 72 saat içerisinde sisteme eklemeniz gerekmektedir.",
-          style: TextStyle(color: darkGey),
+          style: TextStyle(color: darkGrey),
         ),
         const SizedBox(
           height: defaultPadding / 2,

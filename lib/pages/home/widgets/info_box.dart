@@ -17,14 +17,14 @@ Widget InfoBox(BuildContext context) {
           style: Theme.of(context)
               .textTheme
               .titleLarge
-              ?.copyWith(fontWeight: FontWeight.w600, color: darkGey),
+              ?.copyWith(fontWeight: FontWeight.w600, color: darkGrey),
         ),
         const SizedBox(
           height: defaultPadding / 2,
         ),
         const Text(
           "Satış Acentalarımız özel olarak hazırlanan BG Bonus Sistemine hoşgeldiniz.",
-          style: TextStyle(color: darkGey),
+          style: TextStyle(color: darkGrey),
           textAlign: TextAlign.center,
         ),
         const SizedBox(
@@ -32,7 +32,7 @@ Widget InfoBox(BuildContext context) {
         ),
         const Text(
           "NG Phaselis Bay için yapacağınız rezervasyonlardan PUAN KAZANACAK ve kaxandığınız puanlara özel indirimler, ÜCRETSİZ KONAKLAMA hakkında faydalanabileceksiniz.",
-          style: TextStyle(color: darkGey),
+          style: TextStyle(color: darkGrey),
           textAlign: TextAlign.center,
         ),
         const SizedBox(
@@ -40,7 +40,7 @@ Widget InfoBox(BuildContext context) {
         ),
         const Text(
           "Detaylı bilgi için aşağıdaki linkleri inceleyebilir ve her türlü sorunuz için bizlere bonus@nghotels.com.tr adresinden ulaşabilirsiniz.",
-          style: TextStyle(color: darkGey),
+          style: TextStyle(color: darkGrey),
           textAlign: TextAlign.center,
         )
       ],

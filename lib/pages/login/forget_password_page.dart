@@ -1,6 +1,8 @@
 import 'package:agency/constants.dart';
+import 'package:agency/pages/login/widgets/login_header.dart';
 import 'package:agency/utils/app_routes.dart';
 import 'package:agency/widgets/default_button.dart';
+import 'package:agency/widgets/networkimage_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -10,14 +12,18 @@ class ForgetPasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       appBar: AppBar(
-        title: const Text('Forget Password'),
         backgroundColor: Colors.white,
+        foregroundColor: Colors.black,
+        title: Text(""),
+        automaticallyImplyLeading: true,
       ),
       body: Center(
         child: SingleChildScrollView(
           child: Column(
             children: [
+              LoginPageHeader(),
               Container(
                 margin: const EdgeInsets.all(defaultPadding),
                 padding: const EdgeInsets.symmetric(

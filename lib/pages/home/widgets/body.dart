@@ -1,5 +1,5 @@
 import 'package:agency/pages/home/widgets/bottom_slider.dart';
-import 'package:agency/pages/home/widgets/dashnoard.dart';
+import 'package:agency/pages/home/widgets/dashboard.dart';
 import 'package:agency/pages/home/widgets/home_header.dart';
 import 'package:agency/pages/home/widgets/image_slider.dart';
 import 'package:agency/pages/home/widgets/info_box.dart';

@@ -14,7 +14,7 @@ Widget formMaster(
   return Scaffold(
     body: Container(
       width: double.infinity,
-      decoration: BoxDecoration(color: kLightBlue),
+      decoration: BoxDecoration(color: darkGrey),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: <Widget>[
@@ -28,7 +28,7 @@ Widget formMaster(
               ),
               Container(
                 width: 320,
-                padding: EdgeInsets.all(defaultPadding),
+                padding: EdgeInsets.all(5),
                 child: Text(
                   title.tr,
                   style: TextStyle(color: Colors.white, fontSize: 22),

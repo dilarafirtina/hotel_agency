@@ -3,7 +3,6 @@ import 'package:agency/not_found_view.dart';
 import 'package:agency/pages/contact/contact.dart';
 import 'package:agency/pages/home/home_view.dart';
 import 'package:agency/pages/login/forget_password_page.dart';
-import 'package:agency/pages/login/introLogin.dart';
 import 'package:agency/pages/login/login_controller.dart';
 import 'package:agency/pages/login/login_view.dart';
 import 'package:agency/pages/login/password_reset_page.dart';
@@ -49,7 +48,6 @@ class Routes {
             () => {Get.lazyPut<ProfileController>(() => ProfileController())})),
     GetPage(name: AppRoutes.logout, page: () => LogoutView()),
     GetPage(name: AppRoutes.changePassword, page: () => ChangePasswordPage()),
-    GetPage(name: AppRoutes.loginIntro, page: () => IntroLoginView()),
     GetPage(
         name: AppRoutes.login,
         page: () => LoginView(),

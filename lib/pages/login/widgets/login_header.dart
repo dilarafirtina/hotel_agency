@@ -17,7 +17,7 @@ class LoginPageHeader extends StatelessWidget {
           child: AspectRatio(
             aspectRatio: 1 / 0.5,
             child: cachedNetworkImage(
-              logoImage,
+              bonusLogo,
               BoxFit.contain,
               'login_header',
             ),

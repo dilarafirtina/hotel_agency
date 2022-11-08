@@ -6,7 +6,7 @@ const kAnimationDuration = Duration(milliseconds: 200);
 
 const kLightBlue = Color(0xFF0071a7);
 const kDarkblue = Color(0xFF003557);
-const darkGey = Color(0xFF707070);
+const darkGrey = Color(0xFF707070);
 const textGrey = Color(0xFF7b7b7b);
 
 const contentColorLightTheme = Color.fromRGBO(29, 29, 53, 1);
@@ -35,3 +35,4 @@ const String trImage = "https://yasmak.opex.app/images/tr.png";
 const String enImage = "https://yasmak.opex.app/images/uk.png";
 const String deImage = "https://yasmak.opex.app/images/de.png";
 const String ruImage = "https://yasmak.opex.app/images/ru.png";
+const String bonusLogo = "https://yasmak.opex.app/bonus_logo.png";

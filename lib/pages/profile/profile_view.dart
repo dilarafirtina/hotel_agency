@@ -14,25 +14,43 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     final ProfileController _controller = Get.find();
     return formMaster(
-        title: "Let us know about you",
+        title: "Yeni Üye Kayıt Formu",
         formData: _controller.formData,
         key: formKey,
         onTap: () => _controller.handleSave(formKey),
         children: <Widget>[
-          formLabel('First Name'),
+          formLabel('Adı'),
           formInput("FIRSTNAME",
               initialValue: _controller.firstName.value, isRequired: true),
-          formLabel('Last Name'),
+          formLabel('Soyadı'),
           formInput("LASTNAME",
               initialValue: _controller.lastName.value, isRequired: true),
-          formLabel('Birth Date'),
-          Obx(() => formDatePicker("BDATE", InputType.date, formKey,
-              initialValue: _controller.birthDate.value,
-              minDate: DateTime.parse(
-                  "19000101"))), //initialValue: _controller.birthDate.value
-          formLabel('EMail'),
+          formLabel('Görevi'),
+          formInput("TASK"),
+          formLabel('Kişisel Mail Adresi'),
           formInput("EMAIL"), //initialValue: _controller.email.value
-          formLabel('Phone Number'),
+          formLabel('Şifre'),
+          Obx(() => formPassword("PASSWORD", _controller.obscureText.value,
+              onTap: () => _controller.obscureText.value =
+                  !_controller.obscureText.value)),
+          formLabel('Şifreyi Tekrarlayın'),
+          Obx(() => formPassword(
+              "VERIFYPASSWORD", _controller.obscureText1.value,
+              onTap: () => _controller.obscureText1.value =
+                  !_controller.obscureText1.value)),
+          formLabel('Acenta Mail Adresi'),
+          formInput("AGENCY_EMAIL", isRequired: true),
+          formLabel('Acenta Adı'),
+          formInput("AGENCY_NAME", isRequired: true),
+          formLabel('Acenta ID'),
+          formInput("AGENCY_ID", isRequired: true),
+          formLabel('Acenta Adresi'),
+          formInputArea("AGENCY_ADDRESS"),
+          formLabel('Acenta Şehri'),
+          formDropdown("AGENCY_CITY", []),
+          formLabel('Acenta Ülkesi'),
+          formDropdown("AGENCY_COUNTRY", []),
+          formLabel('Acenta Telefonu' + ' *'),
           InternationalPhoneNumberInput(
             onInputChanged: (PhoneNumber number) {
               //print(number.phoneNumber);
@@ -65,16 +83,10 @@ class ProfileView extends StatelessWidget {
               //print('On Saved: $number');
             },
           ),
+          formLabel('Acenta Sahibinin Adı'),
+          formInput("AGENCY_OWNER", isRequired: true),
           //formInput("PHONE", initialValue: _controller.phone.value),
-          formLabel('Password'),
-          Obx(() => formPassword("PASSWORD", _controller.obscureText.value,
-              onTap: () => _controller.obscureText.value =
-                  !_controller.obscureText.value)),
-          formLabel('Verify Password'),
-          Obx(() => formPassword(
-              "VERIFYPASSWORD", _controller.obscureText1.value,
-              onTap: () => _controller.obscureText1.value =
-                  !_controller.obscureText1.value)),
+
           //@GDPR BIT=null,
           //@EMAILSEND BIT=NULL,
         ]);

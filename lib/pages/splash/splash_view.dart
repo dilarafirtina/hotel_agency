@@ -1,5 +1,5 @@
 import 'package:agency/constants.dart';
-import 'package:agency/pages/login/widgets/intro_page_background_wrapper.dart';
+import 'package:agency/pages/splash/background_wrapper.dart';
 import 'package:agency/theme.dart';
 import 'package:agency/utils/app_routes.dart';
 import 'package:agency/widgets/default_button.dart';
