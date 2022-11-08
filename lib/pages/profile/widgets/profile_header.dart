@@ -1,0 +1,93 @@
+import 'package:cached_network_image/cached_network_image.dart';
+import 'package:flutter/material.dart';
+import 'package:agency/constants.dart';
+import 'package:agency/widgets/networkimage_widget.dart';
+import 'package:agency/widgets/round_backgroud_button.dart';
+
+class ProfileHeader extends StatelessWidget {
+  const ProfileHeader({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Stack(
+      children: [
+        /// Background
+        cachedNetworkImage(
+          "https://www.wallpapertip.com/wmimgs/171-1717379_black-white-and-gray-wallpaper-gray-background.jpg",
+          BoxFit.contain,
+          '',
+        ),
+
+        /// Content
+        Column(
+          children: [
+            AppBar(
+              leading: backGoundRoundButton(),
+              title: const Text('Profile'),
+              elevation: 0,
+              backgroundColor: Colors.transparent,
+              titleTextStyle: Theme.of(context).textTheme.headline6?.copyWith(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                  ),
+            ),
+            const _UserData(),
+          ],
+        ),
+      ],
+    );
+  }
+}
+
+class _UserData extends StatelessWidget {
+  const _UserData({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: EdgeInsets.all(defaultPadding),
+      child: Row(
+        children: [
+          const SizedBox(width: defaultPadding),
+          SizedBox(
+            width: 100,
+            height: 100,
+            child: ClipOval(
+              child: AspectRatio(
+                aspectRatio: 1 / 1,
+                child: cachedNetworkImage(
+                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE9U_yJRVYMZX4I-rliowO8_qW4e-Ms_VrnbHCiFzVKVVRTmtHGAZKRN7dijPNHVfBZFE&usqp=CAU',
+                  BoxFit.contain,
+                  'profile',
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(width: defaultPadding),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                'Hi,',
+                style: Theme.of(context).textTheme.headline6?.copyWith(
+                    fontWeight: FontWeight.bold, color: Colors.white),
+              ),
+              const SizedBox(height: 8),
+              Text(
+                'Mila Minka',
+                style: Theme.of(context)
+                    .textTheme
+                    .bodyLarge
+                    ?.copyWith(color: Colors.white),
+              ),
+            ],
+          )
+        ],
+      ),
+    );
+  }
+}
