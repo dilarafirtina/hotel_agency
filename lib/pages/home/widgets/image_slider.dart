@@ -91,7 +91,7 @@ class ImageSlider extends StatelessWidget {
                 child: Stack(
                   children: [
                     Container(
-                      height: 200,
+                      height: 220,
                       child: cachedNetworkImage(
                         item["image"],
                         BoxFit.cover,
@@ -102,7 +102,6 @@ class ImageSlider extends StatelessWidget {
                       alignment: Alignment.bottomRight,
                       child: Container(
                         width: 150,
-                        margin: const EdgeInsets.only(bottom: 50),
                         padding: const EdgeInsets.all(10),
                         decoration: BoxDecoration(
                           color: Colors.grey.shade500.withOpacity(0.7),

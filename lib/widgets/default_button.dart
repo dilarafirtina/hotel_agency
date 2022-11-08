@@ -15,13 +15,13 @@ Widget defaultButton({
           foregroundColor: Colors.white,
           shape:
               RoundedRectangleBorder(borderRadius: BorderRadius.circular(20)),
-          backgroundColor: kPrimaryColor,
+          backgroundColor: Colors.black,
         ),
         onPressed: press as void Function()?,
         child: Text(
           text!,
           style: TextStyle(
-            fontSize: 18,
+            fontSize: 16,
             color: Colors.white,
           ),
         ),

@@ -25,7 +25,7 @@ Widget defaultDrawer({
           ),
         ),
         _buildListTile('Login', Icons.login, '', Colors.grey.shade600,
-            onTab: () => Get.toNamed(AppRoutes.loginIntro)),
+            onTab: () => Get.toNamed(AppRoutes.login)),
         _buildListTile('Account', Icons.person, '', Colors.grey.shade600,
             onTab: () => Get.toNamed(AppRoutes.account)),
         _buildListTile('Dashboard', Icons.home, '', Colors.grey.shade600,
