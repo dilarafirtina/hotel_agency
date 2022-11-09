@@ -8,8 +8,12 @@ class HomeView extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-        //appBar: HomeAppbar(),
-        drawer: defaultDrawer(),
-        body: HomeBody());
+      drawer: defaultDrawer(),
+      body: Align(
+          alignment: Alignment.topCenter,
+          child: Container(
+              constraints: const BoxConstraints(maxWidth: 768),
+              child: HomeBody())),
+    );
   }
 }

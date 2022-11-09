@@ -1,4 +1,5 @@
 import 'package:agency/constants.dart';
+import 'package:agency/pages/home/widgets/icon_links.dart';
 import 'package:agency/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
@@ -42,6 +43,28 @@ Widget InfoBox(BuildContext context) {
           "Detaylı bilgi için aşağıdaki linkleri inceleyebilir ve her türlü sorunuz için bizlere bonus@nghotels.com.tr adresinden ulaşabilirsiniz.",
           style: TextStyle(color: darkGrey),
           textAlign: TextAlign.center,
+        ),
+        const SizedBox(
+          height: defaultPadding,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            iconLink(Icons.bed, "google.com", "Odalar"),
+            iconLink(Icons.tour, "google.com", "Sanal Tur"),
+            iconLink(Icons.book, "google.com", "E-Katalog")
+          ],
+        ),
+        const SizedBox(
+          height: defaultPadding,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            iconLink(Icons.file_present, "google.com", "Web Stock"),
+            iconLink(
+                Icons.library_books, "google.com", "NG Bonus System Manuel")
+          ],
         )
       ],
     ),

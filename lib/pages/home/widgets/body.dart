@@ -19,7 +19,7 @@ class HomeBody extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            const HomeHeader(),
+            homeHeader(context),
             const SizedBox(
               height: 16,
             ),

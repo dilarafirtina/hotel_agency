@@ -1,32 +1,41 @@
 import 'package:agency/detail/detail_view.dart';
 import 'package:agency/not_found_view.dart';
 import 'package:agency/pages/contact/contact.dart';
+import 'package:agency/pages/documents/documents_view.dart';
 import 'package:agency/pages/home/home_view.dart';
 import 'package:agency/pages/login/forget_password_page.dart';
 import 'package:agency/pages/login/login_controller.dart';
 import 'package:agency/pages/login/login_view.dart';
 import 'package:agency/pages/login/password_reset_page.dart';
 import 'package:agency/pages/logout/logout_view.dart';
+import 'package:agency/pages/bonus/bonus_view.dart';
 import 'package:agency/pages/profile/account_view.dart';
 import 'package:agency/pages/profile/change_password_page.dart';
 import 'package:agency/pages/profile/profile_controller.dart';
 import 'package:agency/pages/profile/profile_view.dart';
-import 'package:agency/pages/splash/splash_view.dart';
+import 'package:agency/pages/sales/sales_view.dart';
 import 'package:get/get.dart';
-
 import 'utils/app_routes.dart';
 
 class Routes {
-  static const INITIAL = AppRoutes.splash;
+  static const INITIAL = AppRoutes.login;
   static const ERROR = AppRoutes.notFoundPage;
   static final routes = [
     GetPage(
-      name: AppRoutes.splash,
-      page: () => SplashView(),
-    ),
-    GetPage(
       name: AppRoutes.notFoundPage,
       page: () => const UnknownView(),
+    ),
+    GetPage(
+      name: AppRoutes.sales,
+      page: () => SalesView(),
+    ),
+    GetPage(
+      name: AppRoutes.documents,
+      page: () => DocumentsView(),
+    ),
+    GetPage(
+      name: AppRoutes.points,
+      page: () => PointsView(),
     ),
     GetPage(
       name: AppRoutes.home,

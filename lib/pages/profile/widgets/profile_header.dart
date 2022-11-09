@@ -14,10 +14,14 @@ class ProfileHeader extends StatelessWidget {
     return Stack(
       children: [
         /// Background
-        cachedNetworkImage(
-          "https://www.wallpapertip.com/wmimgs/171-1717379_black-white-and-gray-wallpaper-gray-background.jpg",
-          BoxFit.contain,
-          '',
+        SizedBox(
+          height: 300,
+          width: double.infinity,
+          child: cachedNetworkImage(
+            "https://www.wallpapertip.com/wmimgs/171-1717379_black-white-and-gray-wallpaper-gray-background.jpg",
+            BoxFit.cover,
+            '',
+          ),
         ),
 
         /// Content
@@ -60,7 +64,7 @@ class _UserData extends StatelessWidget {
               child: AspectRatio(
                 aspectRatio: 1 / 1,
                 child: cachedNetworkImage(
-                  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSE9U_yJRVYMZX4I-rliowO8_qW4e-Ms_VrnbHCiFzVKVVRTmtHGAZKRN7dijPNHVfBZFE&usqp=CAU',
+                  'https://images.unsplash.com/photo-1570295999919-56ceb5ecca61?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8bWFsZSUyMHByb2ZpbGV8ZW58MHx8MHx8&w=1000&q=80',
                   BoxFit.contain,
                   'profile',
                 ),
@@ -72,13 +76,13 @@ class _UserData extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
               Text(
-                'Hi,',
+                'Merhaba,',
                 style: Theme.of(context).textTheme.headline6?.copyWith(
                     fontWeight: FontWeight.bold, color: Colors.white),
               ),
               const SizedBox(height: 8),
               Text(
-                'Mila Minka',
+                'Emre ÇİVİTCİ',
                 style: Theme.of(context)
                     .textTheme
                     .bodyLarge

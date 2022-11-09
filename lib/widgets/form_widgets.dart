@@ -14,7 +14,7 @@ import 'package:get/get.dart';
 
 Widget formLabel(String label) {
   return Container(
-    padding: const EdgeInsets.symmetric(vertical: 8.0),
+    padding: const EdgeInsets.only(top: 8.0),
     alignment: Alignment.topLeft,
     child: subTitle(label.tr),
   );
@@ -190,6 +190,7 @@ Widget formDropdown(String field, List<LookupItem> items,
     {Function(int?)? onChanged}) {
   return FormBuilderDropdown(
       // autovalidate: true,
+
       name: field,
       decoration: const InputDecoration(
           //suffix: const Icon(Icons.check),
@@ -286,7 +287,7 @@ formDatePicker(
 }
 
 Widget formSaveButton(Function()? onTap) {
-  return defaultButton(press: onTap, text: 'Continue'.tr);
+  return defaultButton(press: onTap, text: 'Devam Et'.tr);
 }
 
 Widget formNote(String text) {

@@ -1,8 +1,9 @@
 import 'package:agency/not_found_view.dart';
-import 'package:agency/pages/splash/splash_view.dart';
+import 'package:agency/pages/login/login_view.dart';
 import 'package:agency/routes.dart';
 import 'package:agency/theme.dart';
 import 'package:agency/utils/app_routes.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -15,6 +16,14 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return GetMaterialApp(
+      scrollBehavior: MaterialScrollBehavior().copyWith(
+        dragDevices: {
+          PointerDeviceKind.mouse,
+          PointerDeviceKind.touch,
+          PointerDeviceKind.stylus,
+          PointerDeviceKind.unknown
+        },
+      ),
       title: 'Opex Messaging',
       debugShowCheckedModeBanner: false,
       defaultTransition: Transition.fadeIn,
@@ -23,7 +32,7 @@ class MyApp extends StatelessWidget {
       initialRoute: Routes.INITIAL,
       unknownRoute: GetPage(
           name: AppRoutes.notFoundPage, page: () => const UnknownView()),
-      home: SplashView(),
+      home: LoginView(),
     );
   }
 }

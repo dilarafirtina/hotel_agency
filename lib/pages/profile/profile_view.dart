@@ -1,3 +1,8 @@
+import 'dart:html';
+
+import 'package:agency/constants.dart';
+import 'package:agency/pages/profile/widgets/photo_upload.dart';
+import 'package:agency/pages/profile/widgets/radio_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:get/get.dart';
@@ -10,6 +15,9 @@ class ProfileView extends StatelessWidget {
   final GlobalKey<FormBuilderState> formKey = GlobalKey<FormBuilderState>();
   ProfileView({Key? key}) : super(key: key);
 
+  var kvkk = false.obs;
+  var agreeement = false.obs;
+
   @override
   Widget build(BuildContext context) {
     final ProfileController _controller = Get.find();
@@ -19,6 +27,8 @@ class ProfileView extends StatelessWidget {
         key: formKey,
         onTap: () => _controller.handleSave(formKey),
         children: <Widget>[
+          formLabel('Cinsiyet'),
+          genderRadioButtons(),
           formLabel('Adı'),
           formInput("FIRSTNAME",
               initialValue: _controller.firstName.value, isRequired: true),
@@ -86,6 +96,64 @@ class ProfileView extends StatelessWidget {
           formLabel('Acenta Sahibinin Adı'),
           formInput("AGENCY_OWNER", isRequired: true),
           //formInput("PHONE", initialValue: _controller.phone.value),
+          Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.start,
+                children: [
+                  const Text("KVKK"),
+                  Obx(
+                    () => Checkbox(
+                      autofocus: false,
+                      activeColor: darkGrey,
+                      checkColor: Colors.white,
+                      value: kvkk.value,
+                      onChanged: (value) {
+                        kvkk.value = value!;
+                      },
+                    ),
+                  ),
+                ],
+              ),
+              ElevatedButton(
+                style: ButtonStyle(
+                    foregroundColor: MaterialStateProperty.all(darkGrey),
+                    backgroundColor:
+                        MaterialStateProperty.all(Color(0xFFF4F4F4))),
+                onPressed: () => getMultipleImageInfos,
+                child: Row(
+                  children: const <Widget>[
+                    Text("Profil Resmi Yükle", style: TextStyle(fontSize: 15)),
+                    SizedBox(
+                      width: 5,
+                    ),
+                    Icon(
+                      Icons.upload_file,
+                      color: darkGrey,
+                      size: 20.0,
+                    ),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Row(
+            children: [
+              const Text("NG Bonus Sözleşmesi"),
+              Obx(
+                () => Checkbox(
+                  autofocus: false,
+                  activeColor: darkGrey,
+                  checkColor: Colors.white,
+                  value: agreeement.value,
+                  onChanged: (value) {
+                    agreeement.value = value!;
+                  },
+                ),
+              ),
+            ],
+          ),
 
           //@GDPR BIT=null,
           //@EMAILSEND BIT=NULL,

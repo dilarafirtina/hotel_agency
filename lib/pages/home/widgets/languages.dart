@@ -18,7 +18,7 @@ showLanguageSettings() {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Text(
-          "Select a Language",
+          "Dil Seçin",
         ),
         const SizedBox(height: 16),
         ListTile(

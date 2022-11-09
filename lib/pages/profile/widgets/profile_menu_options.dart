@@ -29,13 +29,13 @@ class ProfileMenuOptions extends StatelessWidget {
       child: Column(
         children: [
           ProfileListTile(
-            title: 'My Profile',
+            title: 'Profilim',
             icon: const Icon(Icons.person),
             onTap: () => Get.toNamed(AppRoutes.profile),
           ),
           const Divider(thickness: 0.1),
           ProfileListTile(
-              title: 'Change Password',
+              title: 'Şifre Değiştir',
               icon: const Icon(Icons.password),
               onTap: () => Get.toNamed(AppRoutes.changePassword)),
           const Divider(thickness: 0.1),

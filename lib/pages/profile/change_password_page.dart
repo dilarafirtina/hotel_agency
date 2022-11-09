@@ -11,15 +11,15 @@ class ChangePasswordPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return formMaster(
-        title: "Change Password",
+        title: "Şifre Değiştir",
         key: formKey,
         onTap: () => {},
         children: <Widget>[
-          formLabel('Current Password'),
+          formLabel('Güncel şifre'),
           formInput("REMARKS"),
-          formLabel('New Password'),
+          formLabel('Yeni Şifre'),
           formInput("REMARKS"),
-          formLabel('Confirm New Password'),
+          formLabel('Yeni Şifreyi Tekrar Yazın'),
           formInput("REMARKS"),
         ]);
   }

@@ -1,4 +1,5 @@
 import 'package:agency/utils/app_routes.dart';
+import 'package:agency/widgets/default_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -9,14 +10,17 @@ class DontHaveAccountRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Row(
+    return Column(
       mainAxisAlignment: MainAxisAlignment.center,
       children: [
-        const Text('Don\'t Have Account?'),
-        TextButton(
-          onPressed: () => Get.toNamed(AppRoutes.profile),
-          child: const Text('Sign Up'),
-        ),
+        Text('Henüz bir hesabınız yoksa linke tıklayarak üye olabilirsiniz',
+            textAlign: TextAlign.center,
+            style: Theme.of(context)
+                .textTheme
+                .subtitle1!
+                .copyWith(fontWeight: FontWeight.bold, color: Colors.black87)),
+        defaultButton(
+            press: () => Get.toNamed(AppRoutes.profile), text: "ÜYE OL"),
       ],
     );
   }

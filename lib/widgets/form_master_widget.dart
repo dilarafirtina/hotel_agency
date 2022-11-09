@@ -12,78 +12,82 @@ Widget formMaster(
     required Function()? onTap,
     required List<Widget> children}) {
   return Scaffold(
-    body: Container(
-      width: double.infinity,
-      decoration: BoxDecoration(color: darkGrey),
-      child: Column(
-        crossAxisAlignment: CrossAxisAlignment.start,
-        children: <Widget>[
-          Row(
-            children: [
-              backGoundRoundButton(
-                top: 5,
-                left: 5,
-                bottom: 5,
-                right: 0,
-              ),
-              Container(
-                width: 320,
-                padding: EdgeInsets.all(5),
-                child: Text(
-                  title.tr,
-                  style: TextStyle(color: Colors.white, fontSize: 22),
+    body: Align(
+      alignment: Alignment.topCenter,
+      child: Container(
+        constraints: const BoxConstraints(maxWidth: 768),
+        width: double.infinity,
+        decoration: BoxDecoration(color: darkGrey),
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: <Widget>[
+            Row(
+              children: [
+                backGoundRoundButton(
+                  top: 5,
+                  left: 5,
+                  bottom: 5,
+                  right: 0,
                 ),
-              ),
-            ],
-          ),
-          Expanded(
-            child: Container(
-              decoration: BoxDecoration(
-                  color: Colors.white,
-                  borderRadius: BorderRadius.only(
-                      topLeft: Radius.circular(60),
-                      topRight: Radius.circular(60))),
-              child: Padding(
-                padding: EdgeInsets.symmetric(horizontal: 30),
-                child: Column(
-                  children: <Widget>[
-                    SizedBox(
-                      height: 16,
-                    ),
-                    Expanded(
-                        child: SingleChildScrollView(
-                      child: Container(
-                        padding: EdgeInsets.all(10),
-                        decoration: BoxDecoration(
-                          color: Colors.white,
-                          borderRadius: BorderRadius.circular(30),
-                          // boxShadow: [
-                          //   BoxShadow(
-                          //       color: Color.fromRGBO(225, 95, 27, .3),
-                          //       blurRadius: 60,
-                          //       offset: Offset(0, 10))
-                          // ]
-                        ),
-                        child: Column(
-                          children: [
-                            FormBuilder(
-                              key: key,
-                              child: Column(children: children),
-                            ),
-                            formSaveButton(onTap)
-                          ],
-                        ),
-                      ),
-                    )),
-                    SizedBox(
-                      height: 50,
-                    ),
-                  ],
+                Container(
+                  width: 320,
+                  padding: EdgeInsets.all(5),
+                  child: Text(
+                    title.tr,
+                    style: TextStyle(color: Colors.white, fontSize: 22),
+                  ),
                 ),
-              ),
+              ],
             ),
-          )
-        ],
+            Expanded(
+              child: Container(
+                decoration: const BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.only(
+                        topLeft: Radius.circular(60),
+                        topRight: Radius.circular(60))),
+                child: Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 30),
+                  child: Column(
+                    children: <Widget>[
+                      SizedBox(
+                        height: 16,
+                      ),
+                      Expanded(
+                          child: SingleChildScrollView(
+                        child: Container(
+                          padding: EdgeInsets.all(10),
+                          decoration: BoxDecoration(
+                            color: Colors.white,
+                            borderRadius: BorderRadius.circular(30),
+                            // boxShadow: [
+                            //   BoxShadow(
+                            //       color: Color.fromRGBO(225, 95, 27, .3),
+                            //       blurRadius: 60,
+                            //       offset: Offset(0, 10))
+                            // ]
+                          ),
+                          child: Column(
+                            children: [
+                              FormBuilder(
+                                key: key,
+                                child: Column(children: children),
+                              ),
+                              formSaveButton(onTap)
+                            ],
+                          ),
+                        ),
+                      )),
+                      SizedBox(
+                        height: 50,
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            )
+          ],
+        ),
       ),
     ),
   );

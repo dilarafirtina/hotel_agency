@@ -1,13 +1,12 @@
 import 'package:flutter/material.dart';
 
-const kPrimaryColor = Color(0xFFFFC61F);
+const kPrimaryColor = Colors.black;
 const kSecondaryColor = Color(0xFFE9E9E9);
 const kAnimationDuration = Duration(milliseconds: 200);
 
 const kLightBlue = Color(0xFF0071a7);
 const kDarkblue = Color(0xFF003557);
 const darkGrey = Color(0xFF707070);
-const textGrey = Color(0xFF7b7b7b);
 
 const contentColorLightTheme = Color.fromRGBO(29, 29, 53, 1);
 

@@ -9,16 +9,20 @@ class AccountMenuView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      color: Colors.grey.shade50,
-      child: Column(
-        children: const [
-          ProfileHeader(),
-          Expanded(
-              child: SingleChildScrollView(
-            child: ProfileMenuOptions(),
-          )),
-        ],
+    return Align(
+      alignment: Alignment.topCenter,
+      child: Container(
+        constraints: const BoxConstraints(maxWidth: 768),
+        color: Colors.grey.shade50,
+        child: Column(
+          children: const [
+            ProfileHeader(),
+            Expanded(
+                child: SingleChildScrollView(
+              child: ProfileMenuOptions(),
+            )),
+          ],
+        ),
       ),
     );
   }

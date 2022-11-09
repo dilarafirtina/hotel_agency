@@ -82,24 +82,26 @@ class ImageSlider extends StatelessWidget {
         autoPlayCurve: Curves.fastOutSlowIn,
         enableInfiniteScroll: true,
         autoPlayAnimationDuration: Duration(milliseconds: 800),
-        viewportFraction: 0.75,
+        viewportFraction: 0.6,
       ),
       items: randomImages
           .map(
             (item) => Center(
-              child: GestureDetector(
+              child: InkWell(
                 child: Stack(
                   children: [
-                    Container(
-                      height: 220,
-                      child: cachedNetworkImage(
-                        item["image"],
-                        BoxFit.cover,
-                        'slider',
+                    Center(
+                      child: Container(
+                        height: 220,
+                        child: cachedNetworkImage(
+                          item["image"],
+                          BoxFit.cover,
+                          'slider',
+                        ),
                       ),
                     ),
                     Align(
-                      alignment: Alignment.bottomRight,
+                      alignment: Alignment.bottomCenter,
                       child: Container(
                         width: 150,
                         padding: const EdgeInsets.all(10),
