@@ -156,7 +156,9 @@ Widget dashboard(BuildContext context) {
         const SizedBox(
           height: defaultPadding / 2,
         ),
-        defaultButton(text: "YENİ REZERVASYON")
+        Row(mainAxisAlignment: MainAxisAlignment.end, children: [
+          SizedBox(width: 300, child: defaultButton(text: "YENİ REZERVASYON")),
+        ]),
       ],
     ),
   );

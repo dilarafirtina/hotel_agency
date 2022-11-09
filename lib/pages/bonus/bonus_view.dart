@@ -2,6 +2,7 @@ import 'package:agency/pages/bonus/bonus_grid.dart';
 import 'package:agency/pages/sales/sale_grid.dart';
 import 'package:agency/pages/sales/sales.dart';
 import 'package:agency/widgets/custom_header.dart';
+import 'package:agency/widgets/default_button.dart';
 import 'package:animations/animations.dart';
 import 'package:agency/constants.dart';
 import 'package:flutter/material.dart';
@@ -105,6 +106,11 @@ class PointsView extends StatelessWidget {
                   ),
                 ),
               ),
+              Row(children: [
+                SizedBox(
+                    width: 300,
+                    child: defaultButton(text: "YENİ ODA HARCAMA REZERVASYON")),
+              ]),
             ],
           ),
         ),
