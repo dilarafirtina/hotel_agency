@@ -1,6 +1,7 @@
 import 'package:agency/pages/sales/sale_grid.dart';
 import 'package:agency/pages/sales/sales.dart';
 import 'package:agency/widgets/custom_header.dart';
+import 'package:agency/widgets/default_button.dart';
 import 'package:animations/animations.dart';
 import 'package:agency/constants.dart';
 import 'package:flutter/material.dart';
@@ -100,10 +101,50 @@ class SalesView extends StatelessWidget {
                         child: child,
                       );
                     },
-                    child: Obx(() => pageList[pageIndex.value]),
+                    child: Column(
+                      children: [
+                        Obx(() => pageList[pageIndex.value]),
+                      ],
+                    ),
                   ),
                 ),
               ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  SizedBox(
+                      width: 200,
+                      child: defaultButton(text: "YENİ REZERVASYON")),
+                  Container(
+                    padding: EdgeInsets.all(5),
+                    decoration: BoxDecoration(
+                      border: Border.all(color: darkGrey, width: 1),
+                    ),
+                    child: Column(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: [
+                          const Text(
+                            "Toplam Bonus",
+                            textAlign: TextAlign.center,
+                            style: TextStyle(color: darkGrey),
+                          ),
+                          const Text(""),
+                          const SizedBox(
+                            height: defaultPadding / 2,
+                          ),
+                          Text(
+                            "1357",
+                            style: Theme.of(context)
+                                .textTheme
+                                .titleLarge
+                                ?.copyWith(
+                                    fontWeight: FontWeight.w600,
+                                    color: darkGrey),
+                          ),
+                        ]),
+                  ),
+                ],
+              )
             ],
           ),
         ),
