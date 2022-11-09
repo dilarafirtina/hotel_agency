@@ -26,8 +26,7 @@ class LoginView extends StatelessWidget {
         child: Container(
           constraints: const BoxConstraints(maxWidth: 768),
           child: SafeArea(
-            child: SingleChildScrollView(
-                child: Column(
+            child: Column(
               children: [
                 Container(
                   decoration: BoxDecoration(color: Colors.white),
@@ -46,68 +45,72 @@ class LoginView extends StatelessWidget {
                     ],
                   ),
                 ),
-                Stack(
-                  children: [
-                    IntroLoginBackgroundWrapper(
-                        imageURL:
-                            "https://images.trvl-media.com/lodging/66000000/65730000/65726800/65726788/fb7048a5.jpg"),
-                    Column(
-                      crossAxisAlignment: CrossAxisAlignment.center,
-                      mainAxisAlignment: MainAxisAlignment.center,
+                Expanded(
+                  child: SingleChildScrollView(
+                    child: Stack(
                       children: [
-                        SizedBox(
-                          height: 30,
-                        ),
-                        Container(
-                          width: double.infinity,
-                          color: Colors.white,
-                          padding: EdgeInsets.all(defaultPadding),
-                          margin: EdgeInsets.all(defaultPadding),
-                          child: Form(
-                            key: formKey,
-                            child: Column(
-                              children: [
-                                cachedNetworkImage(
-                                  bonusLogo,
-                                  BoxFit.contain,
-                                  'login_header',
-                                ),
-                                formLabel('Kullanıcı Adı'),
-                                formInput("EMAIL", isRequired: true),
-                                formLabel('Şifre'),
-                                Obx(() => formPassword(
-                                    "PASSWORD", _controller.showPassword.value,
-                                    onTap: () =>
-                                        _controller.showPassword.value =
-                                            !_controller.showPassword.value)),
-                                defaultButton(
-                                    press: () => Get.toNamed(AppRoutes
-                                        .home), //(_controller.handleLogin(formKey)),
-                                    text: "Giriş Yapın"),
-                                Align(
-                                  alignment: Alignment.centerLeft,
-                                  child: TextButton(
-                                    onPressed: () {
-                                      Get.toNamed(AppRoutes.forgotPassword);
-                                    },
-                                    child: const Text('Şifremi Unuttum'),
-                                  ),
-                                ),
-                              ],
+                        IntroLoginBackgroundWrapper(
+                            imageURL:
+                                "https://images.trvl-media.com/lodging/66000000/65730000/65726800/65726788/fb7048a5.jpg"),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.center,
+                          mainAxisAlignment: MainAxisAlignment.center,
+                          children: [
+                            SizedBox(
+                              height: 30,
                             ),
-                          ),
-                        ),
-                        Container(
-                          padding: EdgeInsets.all(defaultPadding),
-                          margin: EdgeInsets.all(defaultPadding),
-                          child: DontHaveAccountRow(),
+                            Container(
+                              width: double.infinity,
+                              color: Colors.white,
+                              padding: EdgeInsets.all(defaultPadding),
+                              margin: EdgeInsets.all(defaultPadding),
+                              child: Form(
+                                key: formKey,
+                                child: Column(
+                                  children: [
+                                    cachedNetworkImage(
+                                      bonusLogo,
+                                      BoxFit.contain,
+                                      'login_header',
+                                    ),
+                                    formLabel('Kullanıcı Adı'),
+                                    formInput("EMAIL", isRequired: true),
+                                    formLabel('Şifre'),
+                                    Obx(() => formPassword("PASSWORD",
+                                        _controller.showPassword.value,
+                                        onTap: () => _controller
+                                                .showPassword.value =
+                                            !_controller.showPassword.value)),
+                                    defaultButton(
+                                        press: () => Get.toNamed(AppRoutes
+                                            .home), //(_controller.handleLogin(formKey)),
+                                        text: "Giriş Yapın"),
+                                    Align(
+                                      alignment: Alignment.centerLeft,
+                                      child: TextButton(
+                                        onPressed: () {
+                                          Get.toNamed(AppRoutes.forgotPassword);
+                                        },
+                                        child: const Text('Şifremi Unuttum'),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ),
+                            Container(
+                              padding: EdgeInsets.all(defaultPadding),
+                              margin: EdgeInsets.all(defaultPadding),
+                              child: DontHaveAccountRow(),
+                            ),
+                          ],
                         ),
                       ],
                     ),
-                  ],
+                  ),
                 ),
               ],
-            )),
+            ),
           ),
         ),
       ),
