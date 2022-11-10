@@ -160,7 +160,7 @@ Widget dashboard(BuildContext context) {
         ),
         Row(mainAxisAlignment: MainAxisAlignment.end, children: [
           SizedBox(
-              width: 300,
+              width: 180,
               child: defaultButton(
                   text: "YENİ REZERVASYON",
                   press: () => Get.toNamed(AppRoutes.new_reservation))),

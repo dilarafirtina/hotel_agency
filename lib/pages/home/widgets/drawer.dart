@@ -3,6 +3,7 @@ import 'package:agency/pages/home/widgets/languages.dart';
 import 'package:agency/theme.dart';
 import 'package:agency/utils/app_routes.dart';
 import 'package:agency/widgets/networkimage_widget.dart';
+import 'package:agency/widgets/widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -38,8 +39,7 @@ Widget defaultDrawer({
             onTab: () => Get.toNamed(AppRoutes.documents)),
         _buildListTile('Bize Yazın', Icons.contact_mail,
             onTab: () => Get.toNamed(AppRoutes.contact)),
-        _buildListTile('Dili Değiştir', Icons.language,
-            onTab: () => showLanguageSettings()),
+        popupMenu(),
         _buildListTile('Çıkış', Icons.logout_outlined,
             onTab: () => Get.toNamed(AppRoutes.logout)),
       ],
@@ -79,4 +79,78 @@ Widget _buildListTile(String title, IconData icon, {onTab}) {
         ),
       ),
       onTap: onTab);
+}
+
+Widget popupMenu() {
+  return PopupMenuButton<int>(
+    tooltip: "Message Actions",
+    child: _buildListTile(
+      'Dili Değiştir',
+      Icons.language,
+    ),
+    itemBuilder: (context) => [
+      PopupMenuItem(
+        value: 1,
+        onTap: () => {},
+        child: ListTile(
+          leading: Container(
+              width: 36,
+              child: cachedNetworkImage(trImage, BoxFit.contain, 'tr')),
+          title: const Text("Türkçe"),
+          onTap: () {
+            showToastMessage(
+                "success", "Success", "Dil, Türkçe olarak değiştirildi.");
+            //Get.back();
+          },
+          trailing: Icon(Icons.arrow_right),
+        ),
+      ),
+      PopupMenuItem(
+        value: 2,
+        onTap: () => {},
+        child: ListTile(
+          leading: SizedBox(
+              width: 36,
+              child: cachedNetworkImage(enImage, BoxFit.contain, 'en')),
+          title: const Text("English"),
+          onTap: () {
+            showToastMessage("error", "Success", "Error snackbar widget");
+            //Get.back();
+          },
+          trailing: const Icon(Icons.arrow_right),
+        ),
+      ),
+      PopupMenuItem(
+        value: 3,
+        onTap: () => {},
+        child: ListTile(
+          leading: Container(
+              width: 36,
+              child: cachedNetworkImage(ruImage, BoxFit.contain, 'ru')),
+          title: const Text("Русский"),
+          onTap: () {
+            Get.back();
+          },
+          trailing: const Icon(Icons.arrow_right),
+        ),
+      ),
+      PopupMenuItem(
+        value: 4,
+        onTap: () => {},
+        child: ListTile(
+          leading: SizedBox(
+              width: 36,
+              child: cachedNetworkImage(deImage, BoxFit.contain, 'de')),
+          title: const Text("Deutsch"),
+          onTap: () {
+            Get.back();
+          },
+          trailing: const Icon(Icons.arrow_right),
+        ),
+      ),
+    ],
+    offset: Offset(200, 200),
+    color: Colors.white,
+    elevation: 20.0,
+  );
 }
