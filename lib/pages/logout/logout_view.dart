@@ -1,3 +1,4 @@
+import 'package:agency/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:agency/pages/logout/logout_controller.dart';
@@ -46,7 +47,7 @@ class LogoutView extends StatelessWidget {
                     child: Column(
                       children: [
                         cachedNetworkImage(
-                          "https://st4.depositphotos.com/35530942/37862/v/450/depositphotos_378626418-stock-illustration-digital-detox-concept-happy-woman.jpg",
+                          bonusLogo,
                           BoxFit.contain,
                           'logout',
                         ),
