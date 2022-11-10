@@ -41,7 +41,7 @@ class NewBonusUseView extends StatelessWidget {
               onChanged: _controller.onBonusValueChanged),
           if (!_controller.isCash.value)
             width > 640 ? personNumbersDesktop() : personNumbersMobile(),
-          if (_controller.isChild.value && !_controller.isCash.value)
+          if (!_controller.isCash.value)
             width > 640 ? childAgesDesktop() : childAgesMobile(),
           formLabel('Rezervasyon Tarihi'),
           formDatePicker("TDATE", InputType.date, formKey),

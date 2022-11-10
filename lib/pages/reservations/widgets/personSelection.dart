@@ -36,7 +36,7 @@ Widget personNumbersDesktop() {
             Container(
               width: 200,
               child: formDropdown('CHILD', numberofPeople,
-                  onChanged: _controller.onPersonValueChanged),
+                  onChanged: _controller.onChildValueChanged),
             )
           ],
         ),
@@ -47,7 +47,7 @@ Widget personNumbersDesktop() {
             Container(
               width: 200,
               child: formDropdown('BABY', numberofPeople,
-                  onChanged: _controller.onPersonValueChanged),
+                  onChanged: _controller.onBabyValueChanged),
             )
           ],
         ),
@@ -65,10 +65,10 @@ Widget personNumbersMobile() {
     ),
     formLabel('Çocuk Sayısı'),
     formDropdown('CHILD', numberofPeople,
-        onChanged: _controller.onPersonValueChanged),
+        onChanged: _controller.onChildValueChanged),
     formLabel('Bebek Sayısı'),
     formDropdown('BABY', numberofPeople,
-        onChanged: _controller.onPersonValueChanged),
+        onChanged: _controller.onBabyValueChanged),
   ]);
 }
 
@@ -83,72 +83,74 @@ Widget childAgesDesktop() {
         const SizedBox(
           width: 200,
         ),
-        Column(
-          children: [
-            formLabel('Çocuk Yaşı'),
-            //for number of child of baby
-            Row(
-              children: [
-                formLabel('1.'),
-                Column(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.only(bottom: defaultPadding),
-                      width: 200,
-                      child: formDropdown('HOTEL', []),
-                    )
-                  ],
-                )
-              ],
-            ),
-            Row(
-              children: [
-                formLabel('2.'),
-                Column(
-                  children: [
-                    Container(
-                      width: 200,
-                      child: formDropdown('HOTEL', []),
-                    )
-                  ],
-                )
-              ],
-            )
-          ],
-        ),
-        Column(
-          children: [
-            formLabel('Bebek Yaşı'),
-            //for number of child of baby
-            Row(
-              children: [
-                formLabel('1.'),
-                Column(
-                  children: [
-                    Container(
-                      padding: const EdgeInsets.only(bottom: defaultPadding),
-                      width: 200,
-                      child: formDropdown('HOTEL', []),
-                    )
-                  ],
-                )
-              ],
-            ),
-            Row(
-              children: [
-                formLabel('2.'),
-                Column(
-                  children: [
-                    Container(
-                      width: 200,
-                      child: formDropdown('HOTEL', []),
-                    )
-                  ],
-                )
-              ],
-            )
-          ],
-        ),
+        if (_controller.isChild.value)
+          Column(
+            children: [
+              formLabel('Çocuk Yaşı'),
+              //for number of child of baby
+              Row(
+                children: [
+                  formLabel('1.'),
+                  Column(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.only(bottom: defaultPadding),
+                        width: 200,
+                        child: formDropdown('HOTEL', []),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  formLabel('2.'),
+                  Column(
+                    children: [
+                      Container(
+                        width: 200,
+                        child: formDropdown('HOTEL', []),
+                      )
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
+        if (_controller.isBaby.value)
+          Column(
+            children: [
+              formLabel('Bebek Yaşı'),
+              //for number of child of baby
+              Row(
+                children: [
+                  formLabel('1.'),
+                  Column(
+                    children: [
+                      Container(
+                        padding: const EdgeInsets.only(bottom: defaultPadding),
+                        width: 200,
+                        child: formDropdown('HOTEL', []),
+                      )
+                    ],
+                  )
+                ],
+              ),
+              Row(
+                children: [
+                  formLabel('2.'),
+                  Column(
+                    children: [
+                      Container(
+                        width: 200,
+                        child: formDropdown('HOTEL', []),
+                      )
+                    ],
+                  )
+                ],
+              )
+            ],
+          ),
       ],
     ),
   );
@@ -158,65 +160,75 @@ Widget childAgesMobile() {
   // TODO : if number of child or baby > 0,
   return Column(
     children: [
-      formLabel('Çocuk Yaşı'),
-      Row(
-        children: [
-          formLabel('1.'),
-          Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.only(bottom: defaultPadding),
-                width: 200,
-                child: formDropdown('HOTEL', []),
-              )
-            ],
-          )
-        ],
-      ),
-      Row(
-        children: [
-          formLabel('2.'),
-          Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.only(bottom: defaultPadding),
-                width: 200,
-                child: formDropdown('HOTEL', []),
-              )
-            ],
-          )
-        ],
-      ),
-      formLabel('Bebek Yaşı'),
+      if (_controller.isChild.value)
+        Column(
+          children: [
+            formLabel('Çocuk Yaşı'),
+            Row(
+              children: [
+                formLabel('1.'),
+                Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(bottom: defaultPadding),
+                      width: 200,
+                      child: formDropdown('HOTEL', []),
+                    )
+                  ],
+                )
+              ],
+            ),
+            Row(
+              children: [
+                formLabel('2.'),
+                Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(bottom: defaultPadding),
+                      width: 200,
+                      child: formDropdown('HOTEL', []),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ],
+        ),
+      if (_controller.isBaby.value)
+        Column(
+          children: [
+            formLabel('Bebek Yaşı'),
+            Row(
+              children: [
+                formLabel('1.'),
+                Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(bottom: defaultPadding),
+                      width: 200,
+                      child: formDropdown('HOTEL', []),
+                    )
+                  ],
+                )
+              ],
+            ),
+            Row(
+              children: [
+                formLabel('2.'),
+                Column(
+                  children: [
+                    Container(
+                      padding: const EdgeInsets.only(bottom: defaultPadding),
+                      width: 200,
+                      child: formDropdown('HOTEL', []),
+                    )
+                  ],
+                )
+              ],
+            ),
+          ],
+        )
       //for number of child of baby
-      Row(
-        children: [
-          formLabel('1.'),
-          Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.only(bottom: defaultPadding),
-                width: 200,
-                child: formDropdown('HOTEL', []),
-              )
-            ],
-          )
-        ],
-      ),
-      Row(
-        children: [
-          formLabel('2.'),
-          Column(
-            children: [
-              Container(
-                padding: const EdgeInsets.only(bottom: defaultPadding),
-                width: 200,
-                child: formDropdown('HOTEL', []),
-              )
-            ],
-          )
-        ],
-      ),
     ],
   );
 }

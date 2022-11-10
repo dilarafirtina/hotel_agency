@@ -5,8 +5,15 @@ import 'package:get/get.dart';
 class ReservationController extends GetxController {
   RxBool isCash = false.obs;
   RxBool isChild = false.obs;
+  RxBool isBaby = false.obs;
 
-  void onPersonValueChanged(int? newValue) async {
+  void onBabyValueChanged(int? newValue) async {
+    if (newValue! > 0)
+      isBaby.value = true;
+    else if (newValue == 0) isBaby.value = false;
+  }
+
+  void onChildValueChanged(int? newValue) async {
     if (newValue! > 0)
       isChild.value = true;
     else if (newValue == 0) isChild.value = false;

@@ -83,11 +83,7 @@ Widget _buildListTile(String title, IconData icon, {onTab}) {
 
 Widget popupMenu() {
   return PopupMenuButton<int>(
-    tooltip: "Message Actions",
-    child: _buildListTile(
-      'Dili Değiştir',
-      Icons.language,
-    ),
+    tooltip: "",
     itemBuilder: (context) => [
       PopupMenuItem(
         value: 1,
@@ -152,5 +148,9 @@ Widget popupMenu() {
     offset: Offset(200, 200),
     color: Colors.white,
     elevation: 20.0,
+    child: _buildListTile(
+      'Dili Değiştir',
+      Icons.language,
+    ),
   );
 }
