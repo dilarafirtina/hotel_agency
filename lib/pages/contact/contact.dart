@@ -16,7 +16,7 @@ class Contact extends StatelessWidget {
           constraints: const BoxConstraints(maxWidth: 768),
           child: SafeArea(
             child: Column(children: [
-              customHeader("Bize Yazın"),
+              customHeader("Bize Yazın", context),
               Expanded(
                 child: SingleChildScrollView(
                   child: Stack(

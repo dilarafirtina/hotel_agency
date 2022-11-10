@@ -16,7 +16,7 @@ class DocumentsView extends StatelessWidget {
           constraints: const BoxConstraints(maxWidth: 768),
           child: Column(
             children: [
-              customHeader("Dökümanlarım"),
+              customHeader("Dökümanlarım", context),
             ],
           ),
         ),

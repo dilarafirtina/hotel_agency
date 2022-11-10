@@ -19,7 +19,7 @@ Widget formMaster(
         constraints: const BoxConstraints(maxWidth: 768),
         child: SafeArea(
           child: Column(children: [
-            customHeader(""),
+            customHeader("", context!),
             Container(
               height: MediaQuery.of(context!).size.height - 70,
               child: Stack(

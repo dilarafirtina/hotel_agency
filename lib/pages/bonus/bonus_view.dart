@@ -33,7 +33,7 @@ class PointsView extends StatelessWidget {
           constraints: const BoxConstraints(maxWidth: 768),
           child: Column(
             children: [
-              customHeader("Harcamalarım"),
+              customHeader("Harcamalarım", context),
               Obx(
                 () => Container(
                   decoration: BoxDecoration(

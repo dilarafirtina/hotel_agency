@@ -32,7 +32,7 @@ class SalesView extends StatelessWidget {
           constraints: const BoxConstraints(maxWidth: 768),
           child: Column(
             children: [
-              customHeader("Satışlarım"),
+              customHeader("Satışlarım", context),
               Obx(
                 () => Container(
                   decoration: BoxDecoration(
