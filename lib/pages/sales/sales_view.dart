@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'components/sales_data.dart';
+import 'widgets/sales_data.dart';
 
 class SalesView extends StatelessWidget {
   SalesView({super.key});

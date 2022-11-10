@@ -48,7 +48,6 @@ class NewReservationView extends StatelessWidget {
             formLabel('Oda Tipi'),
             formDropdown('ROOM', []),
             width > 640 ? personNumbersDesktop() : personNumbersMobile(),
-            width > 640 ? childAgesDesktop() : childAgesMobile(),
             formLabel('Otel Voucher Tarihi'),
             formDatePicker("TDATE", InputType.date, formKey),
             formLabel('Giriş Tarihi'),

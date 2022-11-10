@@ -1,5 +1,5 @@
 import 'package:agency/constants.dart';
-import 'package:agency/pages/sales/components/sales_card.dart';
+import 'package:agency/pages/sales/widgets/sales_card.dart';
 import 'package:flutter/material.dart';
 
 Widget salesList(List data) {

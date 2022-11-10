@@ -1,5 +1,5 @@
 import 'package:agency/constants.dart';
-import 'package:agency/pages/sales/components/sales_data.dart';
+import 'package:agency/pages/sales/widgets/sales_data.dart';
 import 'package:agency/widgets/default_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';

@@ -10,7 +10,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:google_nav_bar/google_nav_bar.dart';
 
-import 'components/bonus_data.dart';
+import 'widgets/bonus_data.dart';
 
 class PointsView extends StatelessWidget {
   PointsView({super.key});
