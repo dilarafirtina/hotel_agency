@@ -1,4 +1,6 @@
 import 'package:agency/constants.dart';
+import 'package:agency/model/lookup_item_model.dart';
+import 'package:agency/pages/reservations/reservation_controller.dart';
 import 'package:agency/pages/reservations/widgets/personSelection.dart';
 import 'package:agency/widgets/photo_upload.dart';
 import 'package:flutter/material.dart';
@@ -7,22 +9,26 @@ import 'package:agency/widgets/form_master_widget.dart';
 import 'package:agency/widgets/form_widgets.dart';
 import 'package:get/get.dart';
 
+List<LookupItem> bonusUse = [
+  LookupItem(0, "Room Reservation"),
+  LookupItem(1, "Cash"),
+];
+
 class NewBonusUseView extends StatelessWidget {
   final GlobalKey<FormBuilderState> formKey = GlobalKey<FormBuilderState>();
   NewBonusUseView({Key? key}) : super(key: key);
+  final ReservationController _controller = Get.put(ReservationController());
 
   @override
   Widget build(BuildContext context) {
     String agency = "ETS";
-    RxBool isCash = false.obs;
-    RxBool isChild = false.obs;
     var width = MediaQuery.of(context).size.width;
     return Obx(() => formMaster(
         context: context,
         title: "Yeni Harcama Kayıt",
         formData: {},
         key: formKey,
-        onTap: () => {}, //_controller.handleSave(formKey),
+        onTap: () => _controller.handleSave(formKey),
         child: <Widget>[
           formLabel('Otel'),
           formDropdown('HOTEL', []),
@@ -31,16 +37,17 @@ class NewBonusUseView extends StatelessWidget {
           formLabel('Soyad'),
           formInput("SURNAME"),
           formLabel('Harcama Şekli'),
-          formDropdown('USE_TYPE', []),
-          if (!isCash.value)
+          formDropdown('USE_TYPE', bonusUse,
+              onChanged: _controller.onBonusValueChanged),
+          if (!_controller.isCash.value)
             width > 640 ? personNumbersDesktop() : personNumbersMobile(),
-          if (isChild.value && !isCash.value)
+          if (_controller.isChild.value && !_controller.isCash.value)
             width > 640 ? childAgesDesktop() : childAgesMobile(),
           formLabel('Rezervasyon Tarihi'),
           formDatePicker("TDATE", InputType.date, formKey),
-          if (!isCash.value) checkIncheckOut(),
+          if (!_controller.isCash.value) checkIncheckOut(),
           const SizedBox(height: defaultPadding * 2),
-          isCash.value
+          _controller.isCash.value
               ? cashWidget()
               : const Text(
                   "Biriken bonuslarınızı sadece 30 Kasım - 1 Nisan tarihleri arasında NG Phaselis Bay otelinde müsaitlik doğrultusunda kullanabilirsiniz. Müsaitlk olmaması durumunda ekibimiz sizinle iletişime geçerek daha uygun bir tarih fırsatı sunacaktır."),

@@ -15,6 +15,7 @@ import 'package:agency/pages/profile/profile_controller.dart';
 import 'package:agency/pages/profile/profile_view.dart';
 import 'package:agency/pages/reservations/new_reservation.dart';
 import 'package:agency/pages/reservations/new_room_bonus_use.dart';
+import 'package:agency/pages/reservations/reservation_controller.dart';
 import 'package:agency/pages/sales/sales_view.dart';
 import 'package:get/get.dart';
 import 'utils/app_routes.dart';
@@ -66,8 +67,18 @@ class Routes {
             () => {Get.lazyPut<LoginController>(() => LoginController())})),
     GetPage(name: AppRoutes.forgotPassword, page: () => ForgetPasswordPage()),
     GetPage(name: AppRoutes.passwordReset, page: () => PasswordResetPage()),
-    GetPage(name: AppRoutes.new_reservation, page: () => NewReservationView()),
-    GetPage(name: AppRoutes.new_bonus, page: () => NewBonusUseView()),
+    GetPage(
+        name: AppRoutes.new_reservation,
+        page: () => NewReservationView(),
+        binding: BindingsBuilder(() => {
+              Get.lazyPut<ReservationController>(() => ReservationController())
+            })),
+    GetPage(
+        name: AppRoutes.new_bonus,
+        page: () => NewBonusUseView(),
+        binding: BindingsBuilder(() => {
+              Get.lazyPut<ReservationController>(() => ReservationController())
+            })),
   ];
 }
 

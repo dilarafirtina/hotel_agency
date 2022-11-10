@@ -1,6 +1,21 @@
 import 'package:agency/constants.dart';
+import 'package:agency/model/lookup_item_model.dart';
+import 'package:agency/pages/reservations/reservation_controller.dart';
 import 'package:agency/widgets/form_widgets.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+
+final ReservationController _controller = Get.put(ReservationController());
+
+List<LookupItem> numberofPeople = [
+  LookupItem(0, "0"),
+  LookupItem(1, "1"),
+  LookupItem(2, "2"),
+  LookupItem(3, "3"),
+  LookupItem(4, "4"),
+  LookupItem(5, "5"),
+  LookupItem(6, "6"),
+];
 
 Widget personNumbersDesktop() {
   return Container(
@@ -11,10 +26,7 @@ Widget personNumbersDesktop() {
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             formLabel('Yetişkin Sayısı'),
-            Container(
-              width: 200,
-              child: formDropdown('ADULT', []),
-            )
+            Container(width: 200, child: formDropdown('ADULT', numberofPeople))
           ],
         ),
         Column(
@@ -23,7 +35,8 @@ Widget personNumbersDesktop() {
             formLabel('Çocuk Sayısı'),
             Container(
               width: 200,
-              child: formDropdown('CHILD', []),
+              child: formDropdown('CHILD', numberofPeople,
+                  onChanged: _controller.onPersonValueChanged),
             )
           ],
         ),
@@ -33,7 +46,8 @@ Widget personNumbersDesktop() {
             formLabel('Bebek Sayısı'),
             Container(
               width: 200,
-              child: formDropdown('BABY', []),
+              child: formDropdown('BABY', numberofPeople,
+                  onChanged: _controller.onPersonValueChanged),
             )
           ],
         ),
@@ -45,11 +59,16 @@ Widget personNumbersDesktop() {
 Widget personNumbersMobile() {
   return Column(children: [
     formLabel('Yetişkin Sayısı'),
-    formDropdown('ADULT', []),
+    formDropdown(
+      'ADULT',
+      numberofPeople,
+    ),
     formLabel('Çocuk Sayısı'),
-    formDropdown('CHILD', []),
+    formDropdown('CHILD', numberofPeople,
+        onChanged: _controller.onPersonValueChanged),
     formLabel('Bebek Sayısı'),
-    formDropdown('BABY', []),
+    formDropdown('BABY', numberofPeople,
+        onChanged: _controller.onPersonValueChanged),
   ]);
 }
 
