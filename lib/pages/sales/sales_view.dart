@@ -1,5 +1,6 @@
 import 'package:agency/pages/sales/sale_grid.dart';
 import 'package:agency/pages/sales/sales.dart';
+import 'package:agency/utils/app_routes.dart';
 import 'package:agency/widgets/custom_header.dart';
 import 'package:agency/widgets/default_button.dart';
 import 'package:animations/animations.dart';
@@ -112,10 +113,14 @@ class SalesView extends StatelessWidget {
               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                 children: [
-                  SizedBox(
-                      width: 200,
-                      child: defaultButton(text: "YENİ REZERVASYON")),
                   Container(
+                      margin: EdgeInsets.all(defaultPadding),
+                      width: 200,
+                      child: defaultButton(
+                          text: "YENİ REZERVASYON",
+                          press: () => Get.toNamed(AppRoutes.new_reservation))),
+                  Container(
+                    margin: EdgeInsets.all(defaultPadding),
                     padding: EdgeInsets.all(5),
                     decoration: BoxDecoration(
                       border: Border.all(color: darkGrey, width: 1),

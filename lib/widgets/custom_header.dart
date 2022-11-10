@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 Widget customHeader(String? title) {
   return Container(
+    height: 70,
     decoration: BoxDecoration(color: Colors.white),
     padding: const EdgeInsets.symmetric(horizontal: 5),
     child: Row(
@@ -15,19 +16,19 @@ Widget customHeader(String? title) {
           children: [
             IconButton(
               icon: const Icon(Icons.arrow_back),
-              iconSize: 30,
+              iconSize: 25,
               hoverColor: Colors.transparent,
-              onPressed: () => Get.toNamed(AppRoutes.home),
+              onPressed: () => Get.back(),
             ),
             Text(
               title!,
-              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
+              style: TextStyle(fontWeight: FontWeight.w600, fontSize: 15),
             )
           ],
         ),
         Container(
-          width: 250,
-          height: 70,
+          width: 200,
+          height: 50,
           margin: const EdgeInsets.only(top: 8.0),
           padding: const EdgeInsets.all(8.0),
           child: cachedNetworkImage(logoImage, BoxFit.contain, 'custom_header'),

@@ -1,10 +1,12 @@
 import 'package:agency/constants.dart';
+import 'package:agency/utils/app_routes.dart';
 import 'package:agency/widgets/default_button.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 Widget dashboard(BuildContext context) {
   return Container(
-    margin: const EdgeInsets.all(defaultPadding),
+    //margin: const EdgeInsets.all(defaultPadding),
     width: double.infinity,
     decoration: const BoxDecoration(color: Colors.white),
     padding: const EdgeInsets.all(defaultPadding),
@@ -157,7 +159,11 @@ Widget dashboard(BuildContext context) {
           height: defaultPadding / 2,
         ),
         Row(mainAxisAlignment: MainAxisAlignment.end, children: [
-          SizedBox(width: 300, child: defaultButton(text: "YENİ REZERVASYON")),
+          SizedBox(
+              width: 300,
+              child: defaultButton(
+                  text: "YENİ REZERVASYON",
+                  press: () => Get.toNamed(AppRoutes.new_reservation))),
         ]),
       ],
     ),

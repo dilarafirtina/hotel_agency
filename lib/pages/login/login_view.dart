@@ -1,16 +1,17 @@
+import 'package:agency/pages/home/widgets/home_header.dart';
 import 'package:agency/pages/login/login_controller.dart';
-import 'package:agency/widgets/background_wrapper.dart';
-import 'package:agency/widgets/networkimage_widget.dart';
-import 'package:flutter/material.dart';
-import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:get/get.dart';
-import 'package:agency/constants.dart';
 import 'package:agency/pages/login/widgets/dont_have_account_row.dart';
 import 'package:agency/utils/app_routes.dart';
+import 'package:agency/widgets/background_wrapper.dart';
+import 'package:agency/widgets/custom_header.dart';
 import 'package:agency/widgets/default_button.dart';
-import 'package:agency/widgets/form_master_widget.dart';
 import 'package:agency/widgets/form_widgets.dart';
-import 'widgets/login_header.dart';
+import 'package:agency/widgets/networkimage_widget.dart';
+import 'package:agency/constants.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_form_builder/flutter_form_builder.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
+import 'package:get/get.dart';
 
 class LoginView extends StatelessWidget {
   LoginView({Key? key}) : super(key: key);
@@ -26,39 +27,41 @@ class LoginView extends StatelessWidget {
         child: Container(
           constraints: const BoxConstraints(maxWidth: 768),
           child: SafeArea(
-            child: Column(
-              children: [
-                Container(
-                  decoration: BoxDecoration(color: Colors.white),
-                  padding: const EdgeInsets.symmetric(horizontal: 5),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.end,
-                    children: [
-                      Container(
-                        width: 250,
-                        height: 70,
-                        margin: const EdgeInsets.only(top: 8.0),
-                        padding: const EdgeInsets.all(8.0),
-                        child: cachedNetworkImage(
-                            logoImage, BoxFit.contain, 'home_header'),
-                      ),
-                    ],
-                  ),
+            child: Column(children: [
+              Container(
+                decoration: BoxDecoration(color: Colors.white),
+                padding: const EdgeInsets.symmetric(horizontal: 5),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  children: [
+                    Container(
+                      width: 250,
+                      height: 70,
+                      margin: const EdgeInsets.only(top: 8.0),
+                      padding: const EdgeInsets.all(8.0),
+                      child: cachedNetworkImage(
+                          logoImage, BoxFit.contain, 'home_header'),
+                    ),
+                  ],
                 ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    child: Stack(
-                      children: [
-                        IntroLoginBackgroundWrapper(
-                            imageURL:
-                                "https://images.trvl-media.com/lodging/66000000/65730000/65726800/65726788/fb7048a5.jpg"),
-                        Column(
-                          crossAxisAlignment: CrossAxisAlignment.center,
-                          mainAxisAlignment: MainAxisAlignment.center,
+              ),
+              Expanded(
+                child: Stack(
+                  alignment: Alignment.center,
+                  children: [
+                    const IntroLoginBackgroundWrapper(
+                        imageURL:
+                            "https://images.trvl-media.com/lodging/66000000/65730000/65726800/65726788/fb7048a5.jpg"),
+                    SingleChildScrollView(
+                      child: Container(
+                        decoration: const BoxDecoration(color: Colors.white),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: defaultPadding / 2,
+                            vertical: defaultPadding),
+                        margin: const EdgeInsets.all(defaultPadding * 2),
+                        child: Column(
+                          mainAxisAlignment: MainAxisAlignment.start,
                           children: [
-                            SizedBox(
-                              height: 30,
-                            ),
                             Container(
                               width: double.infinity,
                               color: Colors.white,
@@ -105,12 +108,12 @@ class LoginView extends StatelessWidget {
                             ),
                           ],
                         ),
-                      ],
+                      ),
                     ),
-                  ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ]),
           ),
         ),
       ),

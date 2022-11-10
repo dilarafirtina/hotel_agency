@@ -20,4 +20,6 @@ class AppRoutes {
   static const String changePassword = "/changePassword";
   static const String settings = "/settings";
   static const String detailPage = '/detail/:id';
+  static const String new_reservation = "/new_reservation";
+  static const String new_bonus = "/new_bonus";
 }

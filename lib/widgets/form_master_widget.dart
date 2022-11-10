@@ -1,92 +1,62 @@
 import 'package:agency/constants.dart';
+import 'package:agency/widgets/background_wrapper.dart';
+import 'package:agency/widgets/custom_header.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:get/get.dart';
 import 'package:agency/widgets/form_widgets.dart';
-import 'package:agency/widgets/round_backgroud_button.dart';
 
 Widget formMaster(
-    {required String title,
+    {BuildContext? context,
+    required String title,
     required GlobalKey<FormBuilderState> key,
     Map<String, dynamic>? formData,
     required Function()? onTap,
-    required List<Widget> children}) {
+    required List<Widget> child}) {
   return Scaffold(
-    body: Align(
-      alignment: Alignment.topCenter,
+    backgroundColor: Colors.white,
+    body: Center(
       child: Container(
         constraints: const BoxConstraints(maxWidth: 768),
-        width: double.infinity,
-        decoration: BoxDecoration(color: darkGrey),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: <Widget>[
-            Row(
-              children: [
-                backGoundRoundButton(
-                  top: 5,
-                  left: 5,
-                  bottom: 5,
-                  right: 0,
-                ),
-                Container(
-                  width: 320,
-                  padding: EdgeInsets.all(5),
-                  child: Text(
-                    title.tr,
-                    style: TextStyle(color: Colors.white, fontSize: 22),
-                  ),
-                ),
-              ],
-            ),
-            Expanded(
-              child: Container(
-                decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
-                        topLeft: Radius.circular(60),
-                        topRight: Radius.circular(60))),
-                child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Column(
-                    children: <Widget>[
-                      SizedBox(
-                        height: 16,
-                      ),
-                      Expanded(
-                          child: SingleChildScrollView(
-                        child: Container(
-                          padding: EdgeInsets.all(10),
-                          decoration: BoxDecoration(
-                            color: Colors.white,
-                            borderRadius: BorderRadius.circular(30),
-                            // boxShadow: [
-                            //   BoxShadow(
-                            //       color: Color.fromRGBO(225, 95, 27, .3),
-                            //       blurRadius: 60,
-                            //       offset: Offset(0, 10))
-                            // ]
-                          ),
-                          child: Column(
-                            children: [
-                              FormBuilder(
-                                key: key,
-                                child: Column(children: children),
-                              ),
-                              formSaveButton(onTap)
-                            ],
-                          ),
+        child: SafeArea(
+          child: Column(children: [
+            customHeader(""),
+            Container(
+              height: MediaQuery.of(context!).size.height - 70,
+              child: Stack(
+                alignment: Alignment.center,
+                children: [
+                  const IntroLoginBackgroundWrapper(
+                      imageURL:
+                          "https://images.trvl-media.com/lodging/66000000/65730000/65726800/65726788/fb7048a5.jpg"),
+                  Container(
+                    child: SingleChildScrollView(
+                      child: Container(
+                        decoration: const BoxDecoration(color: Colors.white),
+                        padding: const EdgeInsets.symmetric(
+                            horizontal: defaultPadding,
+                            vertical: defaultPadding),
+                        margin: const EdgeInsets.all(defaultPadding * 2),
+                        child: Column(
+                          children: [
+                            Text(
+                              title,
+                              style: TextStyle(
+                                  fontWeight: FontWeight.w600, fontSize: 16),
+                            ),
+                            FormBuilder(
+                              key: key,
+                              child: Column(children: child),
+                            ),
+                            formSaveButton(onTap)
+                          ],
                         ),
-                      )),
-                      SizedBox(
-                        height: 50,
                       ),
-                    ],
+                    ),
                   ),
-                ),
+                ],
               ),
-            )
-          ],
+            ),
+          ]),
         ),
       ),
     ),

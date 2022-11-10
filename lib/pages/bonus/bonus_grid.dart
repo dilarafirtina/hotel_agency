@@ -1,3 +1,4 @@
+import 'package:agency/not_found_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -16,12 +17,15 @@ Widget bonusGrid(BuildContext context, List sales, String? type) {
 
   return Container(
       height: MediaQuery.of(context).size.height - 80,
+      padding: EdgeInsets.all(defaultPadding),
+      margin: const EdgeInsets.all(defaultPadding),
       child: ListView(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         children: [
           Obx(
             () => DataTable(
+              showBottomBorder: true,
               sortColumnIndex: _sortColumnIndex.value,
               sortAscending: _sortAsc.value,
               columns: <DataColumn>[

@@ -33,7 +33,9 @@ class ProfileListTile extends StatelessWidget {
                     .bodyLarge
                     ?.copyWith(color: Colors.black),
               ),
-              const Spacer(),
+              SizedBox(
+                width: 10,
+              ),
               Icon(Icons.arrow_right),
             ],
           ),

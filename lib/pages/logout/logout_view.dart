@@ -33,8 +33,7 @@ class LogoutView extends StatelessWidget {
                           padding: EdgeInsets.symmetric(vertical: 20.0),
                           child: Text("We are sorry to see you go!",
                               textAlign: TextAlign.center,
-                              style:
-                                  TextStyle(color: Colors.white, fontSize: 25)),
+                              style: TextStyle(fontSize: 25)),
                         ),
                       ),
                     ),

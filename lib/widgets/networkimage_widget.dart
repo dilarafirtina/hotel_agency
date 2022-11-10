@@ -12,13 +12,14 @@ Widget cachedNetworkImage(String imageUrl, BoxFit? fitValue, String heroTag) {
     placeholder: (context, url) => ErrorImage(
       heroTag: heroTag,
       imageProvider: Image.asset(
-        "images/logo.png",
+        "assets/images/logo.png",
         fit: BoxFit.cover,
       ).image,
     ),
     errorWidget: (context, url, error) => ErrorImage(
       heroTag: heroTag,
-      imageProvider: Image.asset("images/logo.png", fit: BoxFit.cover).image,
+      imageProvider:
+          Image.asset("assets/images/logo.png", fit: BoxFit.cover).image,
     ),
   );
 }

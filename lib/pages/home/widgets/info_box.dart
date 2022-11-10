@@ -6,7 +6,7 @@ import 'package:get/get.dart';
 
 Widget InfoBox(BuildContext context) {
   return Container(
-    margin: const EdgeInsets.all(defaultPadding),
+    //margin: const EdgeInsets.all(defaultPadding),
     width: double.infinity,
     decoration: const BoxDecoration(color: Colors.white),
     padding: const EdgeInsets.all(defaultPadding),

@@ -24,44 +24,41 @@ Widget defaultDrawer({
             'drawer',
           ),
         ),
-        _buildListTile('Giriş', Icons.login, '', Colors.grey.shade600,
+        _buildListTile('Giriş', Icons.login,
             onTab: () => Get.toNamed(AppRoutes.login)),
-        _buildListTile('Hesabım', Icons.person, '', Colors.grey.shade600,
+        _buildListTile('Hesabım', Icons.person,
             onTab: () => Get.toNamed(AppRoutes.account)),
-        _buildListTile('Dashboard', Icons.home, '', Colors.grey.shade600,
+        _buildListTile('Dashboard', Icons.home,
             onTab: () => Get.toNamed(AppRoutes.home)),
-        _buildListTile('Satışlarım', Icons.sell, '', Colors.grey.shade600,
+        _buildListTile('Satışlarım', Icons.sell,
             onTab: () => Get.toNamed(AppRoutes.sales)),
-        _buildListTile('Harcamalarım', Icons.star, '', Colors.grey.shade600,
+        _buildListTile('Harcamalarım', Icons.star,
             onTab: () => Get.toNamed(AppRoutes.points)),
-        _buildListTile('Dökümanlar', Icons.receipt, '', Colors.grey.shade600,
+        _buildListTile('Dökümanlar', Icons.receipt,
             onTab: () => Get.toNamed(AppRoutes.documents)),
-        _buildListTile(
-            'Bize Yazın', Icons.contact_mail, '', Colors.grey.shade600,
+        _buildListTile('Bize Yazın', Icons.contact_mail,
             onTab: () => Get.toNamed(AppRoutes.contact)),
-        _buildListTile(
-            'Dili Değiştir', Icons.language, '', Colors.grey.shade600,
+        _buildListTile('Dili Değiştir', Icons.language,
             onTab: () => showLanguageSettings()),
-        _buildListTile('Çıkış', Icons.logout_outlined, '', Colors.grey.shade600,
+        _buildListTile('Çıkış', Icons.logout_outlined,
             onTab: () => Get.toNamed(AppRoutes.logout)),
       ],
     ),
   );
 }
 
-Widget _buildListTile(String title, IconData icon, String trailing, Color color,
-    {onTab}) {
+Widget _buildListTile(String title, IconData icon, {onTab}) {
   return ListTile(
       contentPadding: EdgeInsets.only(top: 8.0, left: 8.0, right: 8.0),
       leading: Container(
         width: 46,
         height: 46,
-        decoration:
-            BoxDecoration(shape: BoxShape.circle, color: color.withAlpha(30)),
+        decoration: BoxDecoration(
+            shape: BoxShape.circle, color: Colors.grey.shade600.withAlpha(30)),
         child: Center(
           child: Icon(
             icon,
-            color: color,
+            color: Colors.grey.shade600,
           ),
         ),
       ),
@@ -71,10 +68,10 @@ Widget _buildListTile(String title, IconData icon, String trailing, Color color,
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            Text(trailing,
+            Text('',
                 style: lightTheme.textTheme.bodyText1
                     ?.copyWith(color: Colors.grey.shade600)),
-            Icon(
+            const Icon(
               Icons.arrow_forward_ios,
               size: 16,
             ),

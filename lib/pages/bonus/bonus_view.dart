@@ -1,6 +1,7 @@
 import 'package:agency/pages/bonus/bonus_grid.dart';
 import 'package:agency/pages/sales/sale_grid.dart';
 import 'package:agency/pages/sales/sales.dart';
+import 'package:agency/utils/app_routes.dart';
 import 'package:agency/widgets/custom_header.dart';
 import 'package:agency/widgets/default_button.dart';
 import 'package:animations/animations.dart';
@@ -107,9 +108,12 @@ class PointsView extends StatelessWidget {
                 ),
               ),
               Row(children: [
-                SizedBox(
+                Container(
+                    margin: EdgeInsets.all(defaultPadding),
                     width: 300,
-                    child: defaultButton(text: "YENİ ODA HARCAMA REZERVASYON")),
+                    child: defaultButton(
+                        text: "YENİ ODA HARCAMA REZERVASYON",
+                        press: () => Get.toNamed(AppRoutes.new_bonus))),
               ]),
             ],
           ),

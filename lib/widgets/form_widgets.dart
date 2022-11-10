@@ -14,7 +14,7 @@ import 'package:get/get.dart';
 
 Widget formLabel(String label) {
   return Container(
-    padding: const EdgeInsets.only(top: 8.0),
+    padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
     alignment: Alignment.topLeft,
     child: subTitle(label.tr),
   );

@@ -29,6 +29,7 @@ Widget salesGrid(BuildContext context, List sales) {
       children: [
         Obx(
           () => DataTable(
+            showBottomBorder: true,
             sortColumnIndex: _sortColumnIndex.value,
             sortAscending: _sortAsc.value,
             columns: <DataColumn>[

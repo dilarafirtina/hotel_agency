@@ -24,3 +24,25 @@ Future<void> getMultipleImageInfos() async {
     _imageWidget.value = Image.memory(mediaData.data!);
   }
 }
+
+Widget fileUploadButton(String text) {
+  return ElevatedButton(
+    style: ButtonStyle(
+        foregroundColor: MaterialStateProperty.all(darkGrey),
+        backgroundColor: MaterialStateProperty.all(Color(0xFFF4F4F4))),
+    onPressed: () => getMultipleImageInfos,
+    child: Row(
+      children: <Widget>[
+        Text(text, style: const TextStyle(fontSize: 15)),
+        const SizedBox(
+          width: 5,
+        ),
+        const Icon(
+          Icons.upload_file,
+          color: darkGrey,
+          size: 20.0,
+        ),
+      ],
+    ),
+  );
+}

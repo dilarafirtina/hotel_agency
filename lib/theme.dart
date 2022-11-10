@@ -20,18 +20,18 @@ ThemeData lightTheme = ThemeData.light().copyWith(
         hoverColor: Color(0xFFF4F4F4),
         labelStyle: TextStyle(color: darkGrey),
         focusedBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(30)),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
           borderSide: BorderSide(
               style: BorderStyle.solid,
               color: Color.fromARGB(255, 186, 185, 185)),
         ),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(30)),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
           borderSide:
               BorderSide(style: BorderStyle.solid, color: Color(0xFFcecece)),
         ),
         border: OutlineInputBorder(
-          borderRadius: BorderRadius.all(Radius.circular(30)),
+          borderRadius: BorderRadius.all(Radius.circular(20)),
           borderSide:
               BorderSide(style: BorderStyle.solid, color: Color(0xFFcecece)),
         )),

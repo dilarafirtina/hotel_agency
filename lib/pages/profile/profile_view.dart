@@ -1,7 +1,7 @@
 import 'dart:html';
 
 import 'package:agency/constants.dart';
-import 'package:agency/pages/profile/widgets/photo_upload.dart';
+import 'package:agency/widgets/photo_upload.dart';
 import 'package:agency/pages/profile/widgets/radio_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
@@ -22,11 +22,12 @@ class ProfileView extends StatelessWidget {
   Widget build(BuildContext context) {
     final ProfileController _controller = Get.find();
     return formMaster(
+        context: context,
         title: "Yeni Üye Kayıt Formu",
         formData: _controller.formData,
         key: formKey,
         onTap: () => _controller.handleSave(formKey),
-        children: <Widget>[
+        child: <Widget>[
           formLabel('Cinsiyet'),
           genderRadioButtons(),
           formLabel('Adı'),
@@ -116,26 +117,7 @@ class ProfileView extends StatelessWidget {
                   ),
                 ],
               ),
-              ElevatedButton(
-                style: ButtonStyle(
-                    foregroundColor: MaterialStateProperty.all(darkGrey),
-                    backgroundColor:
-                        MaterialStateProperty.all(Color(0xFFF4F4F4))),
-                onPressed: () => getMultipleImageInfos,
-                child: Row(
-                  children: const <Widget>[
-                    Text("Profil Resmi Yükle", style: TextStyle(fontSize: 15)),
-                    SizedBox(
-                      width: 5,
-                    ),
-                    Icon(
-                      Icons.upload_file,
-                      color: darkGrey,
-                      size: 20.0,
-                    ),
-                  ],
-                ),
-              ),
+              fileUploadButton("Profil Resmi Yükle"),
             ],
           ),
           Row(
