@@ -1,12 +1,13 @@
 import 'dart:html';
 
-import 'package:agency/constants.dart';
 import 'package:mime_type/mime_type.dart';
 import 'package:path/path.dart' as Path;
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:image_picker_web/image_picker_web.dart';
 import 'dart:html' as html;
+
+import '../utils/configuration.dart';
 
 Rx<File> _cloudFile = File([], "name").obs;
 var _fileBytes = [].obs;

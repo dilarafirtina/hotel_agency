@@ -1,7 +1,6 @@
 import 'dart:io';
-import 'package:agency/constants.dart';
+
 import 'package:agency/model/lookup_item_model.dart';
-import 'package:agency/theme.dart';
 import 'package:agency/widgets/default_button.dart';
 import 'package:agency/widgets/widgets.dart';
 import 'package:flutter/foundation.dart';
@@ -12,6 +11,9 @@ import 'package:form_builder_validators/form_builder_validators.dart';
 import 'package:intl/intl.dart';
 import 'package:get/get.dart';
 
+import '../theme/Themes.dart';
+import '../utils/configuration.dart';
+
 Widget formLabel(String label) {
   return Container(
     padding: const EdgeInsets.only(top: 8.0, bottom: 4.0),
@@ -21,13 +23,17 @@ Widget formLabel(String label) {
 }
 
 Widget formInput(String field,
-    {IconData? suffixIcon, bool? isRequired, dynamic initialValue}) {
+    {IconData? suffixIcon,
+    bool? isRequired,
+    dynamic initialValue,
+    String? hintText}) {
   return Container(
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       child: FormBuilderTextField(
         name: field,
         initialValue: initialValue,
         decoration: InputDecoration(
+          hintText: hintText ?? "",
           suffixIcon: Icon(suffixIcon), //Icons.check
         ),
         // valueTransformer: (text) {
@@ -98,16 +104,17 @@ Widget formSwitch(String label, String fieldName, {bool? enabled}) {
 }
 
 Widget formPassword(String field, bool? obscureText,
-    {IconData? suffixIcon, VoidCallback? onTap}) {
+    {IconData? suffixIcon, VoidCallback? onTap, String? hintText}) {
   return Container(
       margin: const EdgeInsets.symmetric(vertical: 8.0),
       child: FormBuilderTextField(
           name: field,
           decoration: InputDecoration(
+              hintText: hintText,
               suffixIcon: IconButton(
-            onPressed: onTap,
-            icon: Icon(obscureText == true ? Icons.lock : Icons.lock_open),
-          )),
+                onPressed: onTap,
+                icon: Icon(obscureText == true ? Icons.lock : Icons.lock_open),
+              )),
           obscureText: obscureText ?? true,
           validator: FormBuilderValidators.compose([
             FormBuilderValidators.required(),

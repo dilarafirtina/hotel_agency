@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:agency/constants.dart';
+
 import 'package:agency/utils/app_routes.dart';
+import '../../../utils/configuration.dart';
 import 'profile_list_tile.dart';
 
 class ProfileMenuOptions extends StatelessWidget {

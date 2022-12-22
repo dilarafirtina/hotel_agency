@@ -1,7 +1,7 @@
 import 'package:agency/pages/sales/widgets/sales_data.dart';
 
 import 'package:flutter/material.dart';
-import '../../../constants.dart';
+import '../../../utils/configuration.dart';
 
 class SalesCard extends StatelessWidget {
   const SalesCard({

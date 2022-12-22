@@ -1,7 +1,7 @@
 import 'package:agency/widgets/networkimage_widget.dart';
 import 'package:flutter/material.dart';
 
-import '../../../constants.dart';
+import '../../../utils/configuration.dart';
 
 class LoginPageHeader extends StatelessWidget {
   const LoginPageHeader({

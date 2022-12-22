@@ -1,7 +1,8 @@
-import 'package:agency/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:agency/widgets/networkimage_widget.dart';
+
+import '../../../theme/Themes.dart';
 
 final List<Map<dynamic, dynamic>> randomImages = [
   {

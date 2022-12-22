@@ -18,7 +18,7 @@ class IntroLoginBackgroundWrapper extends StatelessWidget {
           width: MediaQuery.of(context).size.width,
           child: cachedNetworkImage(
             imageURL,
-            BoxFit.cover,
+            BoxFit.fill,
             'c',
           ),
         ),

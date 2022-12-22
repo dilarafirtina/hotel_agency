@@ -1,8 +1,9 @@
-import 'package:agency/constants.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:agency/widgets/networkimage_widget.dart';
 import 'package:zoom_tap_animation/zoom_tap_animation.dart';
+
+import '../utils/configuration.dart';
 
 class DetailView extends StatelessWidget {
   const DetailView({Key? key}) : super(key: key);

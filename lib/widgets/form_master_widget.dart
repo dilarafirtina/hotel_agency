@@ -1,9 +1,12 @@
-import 'package:agency/constants.dart';
 import 'package:agency/widgets/background_wrapper.dart';
 import 'package:agency/widgets/custom_header.dart';
+import 'package:agency/widgets/master_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:agency/widgets/form_widgets.dart';
+
+import '../utils/configuration.dart';
+import 'widgets.dart';
 
 Widget formMaster(
     {BuildContext? context,
@@ -12,53 +15,22 @@ Widget formMaster(
     Map<String, dynamic>? formData,
     required Function()? onTap,
     required List<Widget> child}) {
-  return Scaffold(
-    backgroundColor: Colors.white,
-    body: Center(
-      child: Container(
-        constraints: const BoxConstraints(maxWidth: 768),
-        child: SafeArea(
-          child: Column(children: [
-            customHeader("", context!),
-            Container(
-              height: MediaQuery.of(context!).size.height - 70,
-              child: Stack(
-                alignment: Alignment.center,
-                children: [
-                  const IntroLoginBackgroundWrapper(
-                      imageURL:
-                          "https://images.trvl-media.com/lodging/66000000/65730000/65726800/65726788/fb7048a5.jpg"),
-                  Container(
-                    child: SingleChildScrollView(
-                      child: Container(
-                        decoration: const BoxDecoration(color: Colors.white),
-                        padding: const EdgeInsets.symmetric(
-                            horizontal: defaultPadding,
-                            vertical: defaultPadding),
-                        margin: const EdgeInsets.all(defaultPadding * 2),
-                        child: Column(
-                          children: [
-                            Text(
-                              title,
-                              style: TextStyle(
-                                  fontWeight: FontWeight.w600, fontSize: 16),
-                            ),
-                            FormBuilder(
-                              key: key,
-                              child: Column(children: child),
-                            ),
-                            formSaveButton(onTap)
-                          ],
-                        ),
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-          ]),
+  return masterPage(Column(children: [
+    customHeader(""),
+    Container(
+      padding: const EdgeInsets.all(defaultPadding * 2),
+      decoration: const BoxDecoration(color: Colors.white),
+      child: Column(children: [
+        Text(
+          title,
+          style: TextStyle(fontWeight: FontWeight.w600, fontSize: 16),
         ),
-      ),
-    ),
-  );
+        FormBuilder(
+          key: key,
+          child: Column(children: child),
+        ),
+        formSaveButton(onTap)
+      ]),
+    )
+  ]));
 }

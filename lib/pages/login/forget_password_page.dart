@@ -1,8 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_form_builder/flutter_form_builder.dart';
-import 'package:agency/constants.dart';
+
 import 'package:agency/widgets/form_master_widget.dart';
 import 'package:agency/widgets/form_widgets.dart';
+
+import '../../utils/configuration.dart';
 
 class ForgetPasswordPage extends StatelessWidget {
   ForgetPasswordPage({Key? key}) : super(key: key);
@@ -16,10 +18,10 @@ class ForgetPasswordPage extends StatelessWidget {
         key: formKey,
         onTap: () => {},
         child: <Widget>[
-          SizedBox(height: defaultPadding * 2),
-          Text(
+          const SizedBox(height: defaultPadding * 2),
+          const Text(
               "Lütfen e-mail adresinii giriniz. Size şifre sıfırlama linki göndereceğiz."),
-          SizedBox(height: defaultPadding * 2),
+          const SizedBox(height: defaultPadding * 2),
           formLabel('E-Mail'),
           formInput("EMAIL"),
         ]);

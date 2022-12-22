@@ -1,6 +1,7 @@
-import 'package:agency/constants.dart';
 import 'package:agency/widgets/networkimage_widget.dart';
 import 'package:flutter/material.dart';
+
+import '../../../utils/configuration.dart';
 
 Widget homeHeader(BuildContext context) {
   return Container(

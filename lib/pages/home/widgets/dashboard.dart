@@ -1,12 +1,12 @@
-import 'package:agency/constants.dart';
 import 'package:agency/utils/app_routes.dart';
 import 'package:agency/widgets/default_button.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../../utils/configuration.dart';
+
 Widget dashboard(BuildContext context) {
   return Container(
-    //margin: const EdgeInsets.all(defaultPadding),
     width: double.infinity,
     decoration: const BoxDecoration(color: Colors.white),
     padding: const EdgeInsets.all(defaultPadding),

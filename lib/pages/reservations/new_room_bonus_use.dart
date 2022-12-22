@@ -1,4 +1,3 @@
-import 'package:agency/constants.dart';
 import 'package:agency/model/lookup_item_model.dart';
 import 'package:agency/pages/reservations/reservation_controller.dart';
 import 'package:agency/pages/reservations/widgets/personSelection.dart';
@@ -8,6 +7,8 @@ import 'package:flutter_form_builder/flutter_form_builder.dart';
 import 'package:agency/widgets/form_master_widget.dart';
 import 'package:agency/widgets/form_widgets.dart';
 import 'package:get/get.dart';
+
+import '../../utils/configuration.dart';
 
 List<LookupItem> bonusUse = [
   LookupItem(0, "Room Reservation"),

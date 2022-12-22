@@ -2,6 +2,8 @@ import 'package:agency/not_found_view.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../utils/configuration.dart';
+
 Widget bonusGrid(BuildContext context, List sales, String? type) {
   RxBool _sortHotelAsc = true.obs;
   RxBool _sortNameAsc = true.obs;

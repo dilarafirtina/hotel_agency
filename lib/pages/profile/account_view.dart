@@ -1,6 +1,7 @@
+import 'package:agency/widgets/master_page.dart';
 import 'package:flutter/material.dart';
-import 'package:agency/constants.dart';
 
+import '../../widgets/widgets.dart';
 import 'widgets/profile_header.dart';
 import 'widgets/profile_menu_options.dart';
 
@@ -9,10 +10,8 @@ class AccountMenuView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Align(
-      alignment: Alignment.topCenter,
-      child: Container(
-        constraints: const BoxConstraints(maxWidth: 768),
+    return masterPage(
+      Container(
         color: Colors.grey.shade50,
         child: Column(
           children: const [

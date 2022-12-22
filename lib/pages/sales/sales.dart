@@ -1,6 +1,7 @@
-import 'package:agency/constants.dart';
 import 'package:agency/pages/sales/widgets/sales_card.dart';
 import 'package:flutter/material.dart';
+
+import '../../utils/configuration.dart';
 
 Widget salesList(List data) {
   return Scaffold(

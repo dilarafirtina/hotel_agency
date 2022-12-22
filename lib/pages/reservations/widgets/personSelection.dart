@@ -1,9 +1,10 @@
-import 'package:agency/constants.dart';
 import 'package:agency/model/lookup_item_model.dart';
 import 'package:agency/pages/reservations/reservation_controller.dart';
 import 'package:agency/widgets/form_widgets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../../../utils/configuration.dart';
 
 final ReservationController _controller = Get.put(ReservationController());
 

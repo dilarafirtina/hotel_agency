@@ -1,8 +1,8 @@
-import 'package:agency/constants.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
 
-Widget SectionTitle(String title, ThemeData theme, String path) {
+import '../../../utils/configuration.dart';
+
+Widget SectionTitle(String title, String path) {
   return Padding(
     padding:
         const EdgeInsets.only(left: 16.0, right: 0.0, bottom: defaultPadding),
@@ -11,8 +11,7 @@ Widget SectionTitle(String title, ThemeData theme, String path) {
       children: [
         Text(
           title,
-          style:
-              theme.textTheme.subtitle1?.copyWith(fontWeight: FontWeight.w600),
+          style: TextStyle(fontWeight: FontWeight.w600),
         ),
         // MaterialButton(
         //   onPressed: () {

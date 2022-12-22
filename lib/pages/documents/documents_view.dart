@@ -2,6 +2,9 @@ import 'package:agency/widgets/custom_header.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
+import '../../widgets/master_page.dart';
+import '../../widgets/widgets.dart';
+
 class DocumentsView extends StatelessWidget {
   DocumentsView({super.key});
 
@@ -9,17 +12,11 @@ class DocumentsView extends StatelessWidget {
   Widget build(BuildContext context) {
     RxInt pageIndex = 0.obs;
 
-    return Scaffold(
-      body: Align(
-        alignment: Alignment.topCenter,
-        child: Container(
-          constraints: const BoxConstraints(maxWidth: 768),
-          child: Column(
-            children: [
-              customHeader("Dökümanlarım", context),
-            ],
-          ),
-        ),
+    return masterPage(
+      Column(
+        children: [
+          customHeader("Dökümanlarım"),
+        ],
       ),
     );
   }

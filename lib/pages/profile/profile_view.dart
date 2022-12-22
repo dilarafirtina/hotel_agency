@@ -1,6 +1,5 @@
 import 'dart:html';
 
-import 'package:agency/constants.dart';
 import 'package:agency/widgets/photo_upload.dart';
 import 'package:agency/pages/profile/widgets/radio_list.dart';
 import 'package:flutter/material.dart';
@@ -9,6 +8,7 @@ import 'package:get/get.dart';
 import 'package:intl_phone_number_input/intl_phone_number_input.dart';
 import 'package:agency/widgets/form_master_widget.dart';
 import 'package:agency/widgets/form_widgets.dart';
+import '../../utils/configuration.dart';
 import 'profile_controller.dart';
 
 class ProfileView extends StatelessWidget {

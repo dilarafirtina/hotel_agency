@@ -1,8 +1,10 @@
 import 'package:cached_network_image/cached_network_image.dart';
 import 'package:flutter/material.dart';
-import 'package:agency/constants.dart';
+
 import 'package:agency/widgets/networkimage_widget.dart';
 import 'package:agency/widgets/round_backgroud_button.dart';
+
+import '../../../utils/configuration.dart';
 
 class ProfileHeader extends StatelessWidget {
   const ProfileHeader({

@@ -1,8 +1,7 @@
-import 'package:agency/constants.dart';
 import 'package:agency/pages/home/widgets/icon_links.dart';
-import 'package:agency/theme.dart';
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
+
+import '../../../utils/configuration.dart';
 
 Widget InfoBox(BuildContext context) {
   return Container(

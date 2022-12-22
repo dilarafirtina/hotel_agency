@@ -1,11 +1,13 @@
-import 'package:agency/constants.dart';
 import 'package:agency/utils/app_routes.dart';
 import 'package:agency/widgets/networkimage_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-Widget customHeader(String? title, BuildContext context) {
-  var width = MediaQuery.of(context).size.width;
+import '../utils/configuration.dart';
+
+Widget customHeader(
+  String? title,
+) {
   return Container(
     height: 70,
     decoration: BoxDecoration(color: Colors.white),
@@ -28,7 +30,7 @@ Widget customHeader(String? title, BuildContext context) {
           ],
         ),
         Container(
-          width: width > 600 ? 270 : 200,
+          width: Get.size.width > 600 ? 270 : 200,
           height: 50,
           margin: const EdgeInsets.only(top: 8.0),
           padding: const EdgeInsets.all(8.0),

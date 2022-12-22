@@ -1,9 +1,8 @@
-import 'package:agency/constants.dart';
 import 'package:agency/utils/app_routes.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-const double defaultPadding = 0;
+import 'utils/configuration.dart';
 
 class UnknownView extends StatelessWidget {
   const UnknownView({Key? key}) : super(key: key);

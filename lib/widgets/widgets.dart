@@ -1,7 +1,8 @@
-import 'package:agency/constants.dart';
-import 'package:agency/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+
+import '../theme/Themes.dart';
+import '../utils/configuration.dart';
 
 Widget header(String header) {
   return Text(header.tr,
@@ -248,4 +249,12 @@ void showToastMessage(String type, String title, String message) async {
     icon: Icon(type == 'error' ? Icons.error : Icons.check_circle,
         color: Colors.white),
   );
+}
+
+Widget limitScreen(
+  Widget child,
+) {
+  return Center(
+      child: Container(
+          constraints: BoxConstraints(maxWidth: maxWidth), child: child));
 }
